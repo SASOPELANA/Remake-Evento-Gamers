@@ -1,0 +1,83 @@
+---
+import somosImg from "../../public/somos-ica-cup.webp";
+---
+
+<section
+  id="nosotros"
+  class="relative flex justify-center items-center min-h-[80vh] md:min-h-[100vh] py-20 overflow-hidden dark:bg-amber-500/30"
+>
+  <div class="absolute inset-0 z-0" id="video-container">
+    <video autoplay muted loop class="object-cover w-full h-full opacity-90">
+      <source src="../../public/video-2.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <div
+    class="relative z-10 flex flex-col items-center bg-white border border-gray-200 rounded-t-lg shadow-sm md:flex-row md:max-w-6xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+  >
+    <img
+      class="object-cover w-full rounded-t-lg h-96 md:h-[520px] md:w-96 lg:w-[500px] md:rounded-none"
+      src={somosImg.src}
+      alt="INCA CUP 2025 - Torneo de videojuegos"
+    />
+    <div class="flex flex-col justify-between p-4 leading-normal">
+      <h5
+        class="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        Somos <strong class="text-yellow-400">INCA CUP 2026</strong>
+      </h5>
+
+      <p
+        class="mb-3 font-normal text-white/50 md:text-lg dark:text-white text-pretty"
+      >
+        ¡La <strong class="text-yellow-300">INCA CUP 2026</strong> está por comenzar!
+        El torneo que reunirá a los <strong class="text-yellow-300"
+          >mejores jugadores de Argentina y Latinoamérica</strong
+        >, junto a invitados especiales de élite. Demuestra que eres el mejor en
+        los juegos más competitivos, gana premios exclusivos y llévate la
+        gloria. ¿Estás listo para representar a tu región? <strong
+          class="text-yellow-400">¡Inscríbete y sé parte de la leyenda!</strong
+        >
+      </p>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Función auxiliar para detectar visibilidad con Promesas
+  const checkElementVisibility = (element, threshold = 0.5) => {
+    return new Promise((resolve) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            observer.disconnect(); // Detiene la observación
+            resolve(true);
+          }
+        },
+        { threshold },
+      );
+
+      observer.observe(element);
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const videoContainer = document.getElementById("video-container");
+
+    if (!videoContainer) return;
+
+    try {
+      // Espera hasta que el 50% del elemento sea visible
+      await checkElementVisibility(videoContainer, 0.5);
+
+      // Aplica animación cuando se cumple la promesa
+      videoContainer.classList.add(
+        "animate-pulse",
+        "animate-once",
+        "animate-ease-linear",
+      );
+    } catch (error) {
+      console.error("Error en la animación:", error);
+    }
+  });
+</script>

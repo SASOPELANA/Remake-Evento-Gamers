@@ -1,0 +1,84 @@
+#app {
+  background-color: #961aa7;
+}
+
+.tituloTime {
+  font-size: 35px;
+  font-weight: bold;
+  padding: 1em;
+  color: #eae5e5;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(50, 51, 49, 0.5);
+  margin: 0;
+}
+
+.simply-section {
+  background-color: crimson;
+  width: 140px;
+  height: 140px;
+  margin: 15px;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(186, 188, 188, 0.87);
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+.simply-section:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px 8px rgba(233, 233, 228, 0.87);
+}
+
+.simply-amount {
+  font-weight: bold;
+  font-size: 35px;
+  color: #bfc6cc;
+  line-height: 1;
+  margin-bottom: 10px; /* Aumenta el espacio entre el número y la palabra */
+}
+
+.simply-word {
+  font-size: 20px;
+  color: #0e0101;
+  margin-top: 0; /* Asegura que no haya margen superior */
+}
+
+#cuenta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5em 0;
+  margin: auto;
+}
+
+/* --------------------------------------- */
+
+/* --- Versión Desktop --- */
+@media (min-width: 720px) {
+  .tituloTime {
+    font-size: 70px;
+    padding: 1em;
+  }
+
+  .simply-section {
+    width: 350px;
+    height: 300px;
+    margin: 0 25px 40px;
+    margin-bottom: 150px;
+  }
+
+  #cuenta {
+    padding: 5em 0;
+  }
+
+  .simply-amount {
+    font-size: 60px;
+  }
+
+  .simply-word {
+    font-size: 50px;
+  }
+}

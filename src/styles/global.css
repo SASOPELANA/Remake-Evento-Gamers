@@ -1,0 +1,8 @@
+/* Importamos estilos de flowbite */
+@import "flowbite";
+
+/* Importamos tailwind animaciones */
+@import "tailwindcss-animated";
+
+/* Dejar tailwind al ultimo para no sobreescribir */
+@import "tailwindcss";
