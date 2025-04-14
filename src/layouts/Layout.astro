@@ -25,6 +25,11 @@ import Header from "../components/Header.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href={icons} />
+    <meta
+      name="description"
+      content={description ||
+        " Evento Gamers, Inca Cup 2026. La mejor experiencia para gamers"}
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
@@ -44,6 +49,9 @@ import Header from "../components/Header.astro";
     box-sizing: border-box;
     font-family: "Onest Variable", sans-serif;
     background: #961aa7;
+
+    /* Desplazamiento del scroll para la animación, lentamente*/
+    scroll-behavior: smooth;
   }
 
   #header-nav {
