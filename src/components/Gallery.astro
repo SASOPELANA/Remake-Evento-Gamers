@@ -1,0 +1,50 @@
+--- 
+// Cargar el CSS de PhotoSwipe
+import 'photoswipe/style.css'; 
+
+---
+
+<div class="grid grid-cols-3 max-w-6xl gap-4 mx-auto py-20 " id="gallery">
+
+  {
+    Array.from({ length: 9 }).map((_, i) => (
+    <a 
+    class="group rounded-xl hover:scale-105 transition-all relative
+    "
+    href={`/archivo-page/first-edition/gallery/img-${i + 1}.jpg`} 
+    target="_blank"
+    data-pswp-width="1152"
+    data-pswp-height="768"
+    >
+    <img 
+      class="blur-xl absolute inset-0 transition group-hover:contrast-150 opacity-70 -z-10"
+      loading="lazy"
+      src={`/archivo-page/first-edition/gallery/img-${i + 1}-zoom.webp`}
+          alt=""
+    />
+
+    <img 
+      class="rounded-xl object-cover h-full w-full"
+      loading="lazy"
+      src={`/archivo-page/first-edition/gallery/img-${i + 1}-zoom.webp`}
+          alt=""
+    />
+      </a>
+    ))  
+    } 
+
+ </div>
+
+{// Forma correcta de importar el script}
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery',
+    children: 'a',
+    showHideAnimationType: 'fade',
+    pswpModule: () => import('photoswipe'),
+  });
+  lightbox.init();
+</script>
+
