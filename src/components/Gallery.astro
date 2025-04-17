@@ -4,13 +4,18 @@ import 'photoswipe/style.css';
 
 ---
 
-<div class="grid grid-cols-3 max-w-6xl gap-4 mx-auto py-20 " id="gallery">
+<div class="bg-gradient-to-r from-[#961aa7] via-black/50 via-50% to-[#961aa7]">
+
+  <strong class=" flex justify-center uppercase text-center text-5xl text-[#ff0] font-bold  pt-5 md:pt-10  " >
+    PixelZone
+  </strong>
+
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 max-w-full gap-4 lg:gap-10 mx-2 lg:mx-8 py-15 md:py-20" id="gallery">
 
   {
-    Array.from({ length: 9 }).map((_, i) => (
+    Array.from({ length: 12 }).map((_, i) => (
     <a 
-    class="group rounded-xl hover:scale-105 transition-all relative
-    "
+    class="group rounded-xl hover:scale-y-105 md:hover:scale-105 transition-all relative"
     href={`/archivo-page/first-edition/gallery/img-${i + 1}.jpg`} 
     target="_blank"
     data-pswp-width="1152"
@@ -34,6 +39,7 @@ import 'photoswipe/style.css';
     } 
 
  </div>
+</div>
 
 {// Forma correcta de importar el script}
 <script>
