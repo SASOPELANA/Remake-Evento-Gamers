@@ -1,10 +1,16 @@
 ---
 import '../styles/contador.css';
+
+// Importamos la traducción de los idiomas
+import { getI18n } from '../i18n/';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
 ---
 
 <div id="app">
   <h2 class="tituloTime uppercase">
-    <strong> ¡Prepárate para el Evento! </strong>
+    <strong> Prepárate para el torneo </strong>
   </h2>
   <div id="cuenta"></div>
 </div>

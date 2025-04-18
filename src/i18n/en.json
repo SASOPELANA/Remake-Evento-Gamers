@@ -1,0 +1,38 @@
+{
+  "SEO_TITLE_1": "INCA CUP 2026",
+  "SEO_DESCRIPTION_1": "Inca Cup 2026 Gaming Tournament",
+
+  "HEADER": {
+    "LOGO_1": "INCA CUP 2026",
+    "LOGO_2": "ABOUT US",
+    "LOGO_3": "ARENA",
+    "LOGO_4": "CATEGORIES",
+    "LOGO_5": "CONTACT",
+    "IDIOMA": {
+      "TITLE": "LANGUAGE",
+      "ENGLISH": "English (US)",
+      "SPANISH": "Español"
+    }
+  },
+
+  "TIMER": {
+    "TITLE": "Get Ready for the Event!",
+    "DAYS": {
+      "PLURAL": "Days",
+      "SINGULAR": "Day"
+    },
+    "HOURS": {
+      "PLURAL": "Hours",
+      "SINGULAR": "Hour"
+    },
+    "MINUTES": {
+      "PLURAL": "Minutes",
+      "SINGULAR": "Minute"
+    },
+    "SECONDS": {
+      "PLURAL": "Seconds",
+      "SINGULAR": "Second"
+    },
+    "ALERT": "The INCA CUP 2025 event has started!!!"
+  }
+}
