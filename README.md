@@ -4,6 +4,6 @@
 
 ![LANDING - INCA CUP](/public/proyecto-landing.webp)
 
-# VIDEO - REMAKE
+# IMAGEN LANDING - REMAKE
 
 ![LANDING - INCA VIDEO - REMAKE](/public/video-landing.webp)
