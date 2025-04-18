@@ -2,7 +2,7 @@
 
 # INCA CUP
 
-![LANDING - INCA CUP]/public/proyecto-landing.webp)
+![LANDING - INCA CUP](/public/proyecto-landing.webp)
 
 # VIDEO - REMAKE
 
