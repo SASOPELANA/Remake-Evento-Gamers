@@ -34,5 +34,10 @@
       "SINGULAR": "Segundo"
     },
     "ALERT": "¡El evento INCA CUP 2025 a comenzado!!!"
+  },
+
+  "ABOUT": {
+    "TITLE": "Somos <strong class='text-yellow-400'>INCA CUP 2026</strong>",
+    "DESCRIPTION": "¡La <strong class='text-yellow-300'>INCA CUP 2026</strong> está por comenzar! El torneo que reunirá a los <strong class='text-yellow-300'>mejores jugadores de Argentina y Latinoamérica</strong>, junto a invitados especiales de élite. Demuestra que eres el mejor en los juegos más competitivos, gana premios exclusivos y llévate la gloria. ¿Estás listo para representar a tu región? <strong class='text-yellow-400'>¡Inscríbete y sé parte de la leyenda!</strong>"
   }
 }

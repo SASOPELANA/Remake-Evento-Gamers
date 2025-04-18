@@ -1,6 +1,12 @@
 ---
-import somosImg from "../../public/somos-ica-cup.webp";
-import videoFondo from "../../public/video-2.mp4";
+import somosImg from '../../public/somos-ica-cup.webp';
+import videoFondo from '../../public/video-2.mp4';
+
+// Importamos la traducción de los idiomas
+import { getI18n } from '../i18n/';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
 ---
 
 <section
@@ -24,22 +30,13 @@ import videoFondo from "../../public/video-2.mp4";
     <div class="flex flex-col justify-between p-4 leading-normal">
       <h5
         class="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
-      >
-        Somos <strong class="text-yellow-400">INCA CUP 2026</strong>
-      </h5>
+        set:html={i18n.ABOUT.TITLE}
+      />
 
       <p
         class="mb-3 font-normal text-white/50 md:text-lg dark:text-white text-pretty"
-      >
-        ¡La <strong class="text-yellow-300">INCA CUP 2026</strong> está por comenzar!
-        El torneo que reunirá a los <strong class="text-yellow-300"
-          >mejores jugadores de Argentina y Latinoamérica</strong
-        >, junto a invitados especiales de élite. Demuestra que eres el mejor en
-        los juegos más competitivos, gana premios exclusivos y llévate la
-        gloria. ¿Estás listo para representar a tu región? <strong
-          class="text-yellow-400">¡Inscríbete y sé parte de la leyenda!</strong
-        >
-      </p>
+        set:html={i18n.ABOUT.DESCRIPTION}
+      />
     </div>
   </div>
 </section>
@@ -62,8 +59,8 @@ import videoFondo from "../../public/video-2.mp4";
     });
   };
 
-  document.addEventListener("DOMContentLoaded", async () => {
-    const videoContainer = document.getElementById("video-container");
+  document.addEventListener('DOMContentLoaded', async () => {
+    const videoContainer = document.getElementById('video-container');
 
     if (!videoContainer) return;
 
@@ -73,12 +70,12 @@ import videoFondo from "../../public/video-2.mp4";
 
       // Aplica animación cuando se cumple la promesa
       videoContainer.classList.add(
-        "animate-pulse",
-        "animate-once",
-        "animate-ease-linear",
+        'animate-pulse',
+        'animate-once',
+        'animate-ease-linear',
       );
     } catch (error) {
-      console.error("Error en la animación:", error);
+      console.error('Error en la animación:', error);
     }
   });
 </script>
