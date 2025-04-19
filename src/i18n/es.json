@@ -37,7 +37,7 @@
   },
 
   "ABOUT": {
-    "TITLE": "Somos <strong class='text-yellow-400'>INCA CUP 2026</strong>",
+    "TITLE": "<strong class='text-white'>Somos </strong> <strong class='text-yellow-400'>INCA CUP 2026</strong>",
     "DESCRIPTION": "¡La <strong class='text-yellow-300'>INCA CUP 2026</strong> está por comenzar! El torneo que reunirá a los <strong class='text-yellow-300'>mejores jugadores de Argentina y Latinoamérica</strong>, junto a invitados especiales de élite. Demuestra que eres el mejor en los juegos más competitivos, gana premios exclusivos y llévate la gloria. ¿Estás listo para representar a tu región? <strong class='text-yellow-400'>¡Inscríbete y sé parte de la leyenda!</strong>"
   },
 
@@ -51,5 +51,31 @@
       "TITLE_1": "VER ALINEACIÓN EXTENDIDA",
       "TITLE_2": "OCULTAR ARENA EXTENDIDA"
     }
+  },
+
+  "PIXEL_ZONE": {
+    "TITLE": "ZONA DE PÍXELES"
+  },
+
+  "VIDEO": {
+    "TITLE": "Tercera Edición de Inca Cup"
+  },
+
+  "FOOTER": {
+    "TITLE": "INCA CUP 2026",
+    "RESOURCE": {
+      "TITLE": "RECURSOS",
+      "CONTACT": "Contacto",
+      "ABOUT": "Sobre Nosotros"
+    },
+    "FOLLOW": {
+      "TITLE": "SIGAMOS EN"
+    },
+    "LEGAL": {
+      "TITLE": "LEGAL",
+      "TERMS": "Terminos y Condiciones",
+      "PRIVACY": "Politica de Privacidad"
+    },
+    "COPYRIGHT": "Todos los derechos reservados."
   }
 }

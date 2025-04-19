@@ -1,3 +1,11 @@
+---
+// Importamos la traducción de los idiomas
+import { getI18n } from '../i18n/';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
 <div
   class="bg-gradient-to-r from-[#961aa7] via-[#D30691] via-50% to-[#961aa7] pb-10"
 >
@@ -6,7 +14,7 @@
       class="flex justify-center uppercase md:text-5xl tracking-wide text-center font-semibold mb-10
     text-balance mx-auto text-[#ff0] text-2xl"
     >
-      Tercera Edición de Inca Cup
+      {i18n.VIDEO.TITLE}
     </strong>
 
     <lite-youtube
