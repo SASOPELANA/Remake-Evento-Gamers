@@ -1,9 +1,9 @@
 ---
 // Tailwind
-import "../styles/global.css";
+import '../styles/global.css';
 
 // Fuente
-import "@fontsource-variable/onest";
+import '@fontsource-variable/onest';
 
 // Interface de Astro
 interface Props {
@@ -16,11 +16,14 @@ interface Props {
 const { title, description, icons } = Astro.props;
 
 //  Componente
-import Header from "../components/Header.astro";
+import Header from '../components/Header.astro';
+
+// Idioma
+const currentLang = Astro.currentLocale || 'es';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={currentLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +31,7 @@ import Header from "../components/Header.astro";
     <meta
       name="description"
       content={description ||
-        " Evento Gamers, Inca Cup 2026. La mejor experiencia para gamers"}
+        ' Evento Gamers, Inca Cup 2026. La mejor experiencia para gamers'}
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -47,7 +50,7 @@ import Header from "../components/Header.astro";
 <style is:global>
   html {
     box-sizing: border-box;
-    font-family: "Onest Variable", sans-serif;
+    font-family: 'Onest Variable', sans-serif;
     background: #961aa7;
 
     /* Desplazamiento del scroll para la animación, lentamente*/

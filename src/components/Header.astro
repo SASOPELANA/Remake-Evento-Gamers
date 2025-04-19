@@ -4,13 +4,19 @@ import { getI18n } from '../i18n/';
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
+
+// Idioma
+const currentLang = Astro.currentLocale || 'es';
 ---
 
 <nav id="header-nav" class="sticky top-0 z-50 border-gray-200 bg-[#961aa7]">
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
-    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a
+      href={`/${currentLang}/`}
+      class="flex items-center space-x-3 rtl:space-x-reverse"
+    >
       <img
         src="/somos-ica-cup.webp"
         class="h-12 w-auto rounded-full"
@@ -52,14 +58,14 @@ const i18n = getI18n({ currentLocale });
       >
         <li>
           <a
-            href="#nosotros"
+            href={`/${currentLang}#nosotros`}
             class="block py-2 px-3 text-white rounded-sm hover:md:bg-transparent hover:bg-[#961aa7]/80 hover:text-[#ff0] md:p-0"
             ><strong>{i18n.HEADER.LOGO_2}</strong></a
           >
         </li>
         <li>
           <a
-            href="#arena"
+            href={`/${currentLang}#arena`}
             class="block py-2 px-3 text-white rounded-sm hover:bg-[#961aa7]/80 md:hover:bg-transparent md:border-0 hover:text-[#ff0] md:p-0"
             ><strong>{i18n.HEADER.LOGO_3}</strong></a
           >
@@ -128,7 +134,7 @@ const i18n = getI18n({ currentLocale });
             <ul class="py-2 font-medium" role="none">
               <li>
                 <a
-                  href="#"
+                  href="/en"
                   class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white"
                   role="menuitem"
                 >
@@ -163,7 +169,7 @@ const i18n = getI18n({ currentLocale });
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/es"
                   class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white hover:text-bold"
                   role="menuitem"
                 >
