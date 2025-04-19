@@ -1,4 +1,10 @@
----
+--- 
+// Importamos la traducción de los idiomas
+import { getI18n } from '../i18n/';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+
 import imgJuego1 from "../../public/arena/gg-strive.webp";
 import imgJuego2 from "../../public/arena/sf6.webp";
 import imgJuego3 from "../../public/arena/mortal-1.webp";
@@ -49,7 +55,7 @@ const CARTAS = [
 
 <section id="arena" class="bg-white mb-10 mt-10 sm:mb-15 sm:mt-15 sm:ms-8 sm:me-8 me-2 ms-2 rounded-xl">
   <h2 class="text-center text-5xl font-bold relative sm:text-8xl sm:pt-32 lg:pt-40 pt-20">
-    <span class="text-transparent [-webkit-text-stroke:2px_#000] opacity-70">Arena de Juegos</span>
+  <span class="text-transparent [-webkit-text-stroke:2px_#000] opacity-70">{i18n.ARENA.TITLE}</span>
   </h2>
 
   <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8 md:gap-x-6 justify-center max-w-screen-2xl mx-auto p-2 md:p-20 sm:p-10 sm:pt-32 pt-20">

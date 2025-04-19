@@ -39,5 +39,17 @@
   "ABOUT": {
     "TITLE": "We are <strong class='text-yellow-400'>INCA CUP 2026</strong>",
     "DESCRIPTION": "<strong class='text-yellow-300'>INCA CUP 2026</strong> is about to begin! The tournament that will bring together the <strong class='text-yellow-300'>best players from Argentina and Latin America</strong>, along with elite special guests. Prove you are the best in the most competitive games, win exclusive prizes, and claim the glory. Are you ready to represent your region? <strong class='text-yellow-400'>Sign up and become part of the legend!</strong>"
+  },
+
+  "ARENA": {
+    "TITLE": "Combat Arena"
+  },
+
+  "EXTENDED_ARENA": {
+    "TITLE": "Extended Arena",
+    "BOTTON": {
+      "TITLE_1": "VIEW EXTENDED LINEUP",
+      "TITLE_2": "HIDE EXTENDED ARENA"
+    }
   }
 }
