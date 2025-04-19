@@ -1,6 +1,7 @@
 ---
 import somosImg from '../../public/somos-ica-cup.webp';
 import videoFondo from '../../public/video-2.mp4';
+import respaldoImg from '../../public/ciber-respaldp.webp';
 
 // Importamos la traducción de los idiomas
 import { getI18n } from '../i18n/';
@@ -11,16 +12,22 @@ const i18n = getI18n({ currentLocale });
 
 <section
   id="nosotros"
-  class="relative flex justify-center items-center min-h-[80vh] md:min-h-[100vh] py-20 overflow-hidden dark:bg-amber-500/30"
+  class="relative flex justify-center items-center min-h-[80vh] md:min-h-[100vh] py-20 overflow-hidden"
 >
   <div class="absolute inset-0 z-0" id="video-container">
     <video autoplay muted loop class="object-cover w-full h-full opacity-90">
       <source src={videoFondo} type="video/mp4" />
+
+      <img
+        src={respaldoImg.src}
+        alt="Fondo de respaldo"
+        class="w-full h-full object-cover opacity-90"
+      />
     </video>
   </div>
 
   <div
-    class="relative z-10 flex flex-col items-center border border-gray-200 rounded-t-lg shadow-sm md:flex-row md:max-w-6xl dark:border-gray-700 bg-gray-800 hover:bg-gray-700"
+    class="relative z-10 flex flex-col items-center border border-gray-200 rounded-t-lg shadow-sm md:flex-row md:max-w-6xl bg-gray-800 hover:bg-gray-700"
   >
     <img
       class="object-cover w-full rounded-t-lg h-96 md:h-[520px] md:w-96 lg:w-[500px] md:rounded-none"
@@ -29,12 +36,12 @@ const i18n = getI18n({ currentLocale });
     />
     <div class="flex flex-col justify-between p-4 leading-normal">
       <h5
-        class="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+        class="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900"
         set:html={i18n.ABOUT.TITLE}
       />
 
       <p
-        class="mb-3 font-normal text-white/50 md:text-lg dark:text-white text-pretty"
+        class="mb-3 font-normal text-white/50 md:text-lg text-pretty"
         set:html={i18n.ABOUT.DESCRIPTION}
       />
     </div>
