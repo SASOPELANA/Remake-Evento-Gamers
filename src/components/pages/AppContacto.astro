@@ -1,0 +1,19 @@
+---
+import LayoutContacto from '@/layouts/ContactoLayout.astro';
+
+import Formulario from './Formulario.astro';
+
+// Importamos la traducción de los idiomas
+import { getI18n } from '@/i18n/';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<LayoutContacto
+  title="Contacto | Remake Evento Gamers"
+  description="Contacto de Remake Evento Gamers"
+  icons="/ino.webp"
+>
+  <Formulario />
+</LayoutContacto>
