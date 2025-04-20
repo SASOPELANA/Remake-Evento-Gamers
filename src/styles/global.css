@@ -1,8 +1,16 @@
 /* Importamos estilos de flowbite */
 @import 'flowbite';
 
+@import 'flag-icon-css/css/flag-icons.min.css';
+
 /* Importamos tailwind animaciones */
 @import 'tailwindcss-animated';
 
 /* Dejar tailwind al ultimo para no sobreescribir */
 @import 'tailwindcss';
+
+/* 💡 VARIABLES PERSONALIZADAS */
+/* 🎨 Sombra personalizada color rosa para textos importantes */
+@theme {
+  --text-shadow-rosa: 0 2px 5px rgb(255 0 128 / 0.8);
+}

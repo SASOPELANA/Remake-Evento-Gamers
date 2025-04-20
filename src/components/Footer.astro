@@ -34,8 +34,9 @@ const currentLang = Astro.currentLocale || '';
           </h2>
           <ul class="text-gray-500 font-medium">
             <li class="mb-4">
-              <a href="#" class="hover:underline"
-                >{i18n.FOOTER.RESOURCE.CONTACT}</a
+              <a
+                href={`/${currentLang}/contacto#contacto-nav`}
+                class="hover:underline">{i18n.FOOTER.RESOURCE.CONTACT}</a
               >
             </li>
             <li>
