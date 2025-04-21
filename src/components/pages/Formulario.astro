@@ -1,48 +1,67 @@
-<div class="pt-10 pb-50 md:pt-40 relative bg-gradient-to-r from-[#000] via-[#D30691] via-50% to-[#000]" id="vanta-bg">
+---
+// Importamos la traducción de los idiomas
+import { getI18n } from '@/i18n/';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+
+// Idioma
+const currentLang = Astro.currentLocale || '';
+---
+
+<div
+  class="pt-10 pb-50 md:pt-40 relative bg-gradient-to-r from-[#000] via-[#D30691] via-50% to-[#000]"
+  id="vanta-bg"
+>
   <form
-    class="max-w-md mx-2 md:mx-auto mt-8 p-6 bg-gray-300/85 rounded-xl shadow-md"
+    class="max-w-md mx-2 md:mx-auto mt-8 p-6 bg-gray-300/85 rounded-xl shadow-md
+    border-4 border-[#ff0]"
     action="https://formsubmit.co/sopekof@gmail.com"
     method="POST"
   >
-    <h2 class="text-2xl font-bold mb-6 text-gray-900">Contacto</h2>
+    <h2
+      class="text-2xl md:text-3xl font-bold mb-6 text-gray-900 uppercase flex justify-center items-center"
+    >
+      {i18n.FORM.FORM_CONTACT.TITLE}
+    </h2>
 
     <div class="mb-4">
       <label for="name" class="block mb-2 text-sm font-bold text-gray-900"
-        >Nombre y Apellido</label
+        >{i18n.FORM.FORM_CONTACT.FULL_NAME}</label
       >
       <input
         type="text"
         id="name"
         name="name"
         class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
-      focus:outline-none focus:ring-2 focus:ring-black focus:border-black block w-full p-2.5"
-        placeholder="Nombre y Apellido"
+      focus:outline-none focus:ring-2 focus:ring-[#ff0] focus:border-[#ff0] block w-full p-2.5"
+        placeholder={i18n.FORM.FORM_CONTACT.FULL_NAME_PLACEHOLDER}
         required
       />
     </div>
 
     <div class="mb-4">
       <label for="email" class="block mb-2 text-sm font-bold text-gray-900">
-        Correo Electrónico
+        {i18n.FORM.FORM_CONTACT.EMAIL}
       </label>
       <input
         type="email"
         id="email"
         name="email"
         class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
-    focus:outline-none focus:ring-2 focus:ring-black focus:border-black block w-full p-2.5 peer"
-        placeholder="nombre@company.com"
+    focus:outline-none focus:ring-2 focus:ring-[#ff0] focus:border-[#ff0] block w-full p-2.5 peer"
+        placeholder={i18n.FORM.FORM_CONTACT.EMAIL_PLACEHOLDER}
         required
       />
       <p class="text-red-500/80 text-sm hidden peer-invalid:block">
-        Ingrese un correo electrónico válido.
+        {i18n.FORM.FORM_CONTACT.EMAIL_VALIDATION}
       </p>
     </div>
 
     <!-- Sección teléfono -->
     <div class="mb-4 py-1">
       <label for="phone" class="block mb-2 text-sm font-bold text-gray-900">
-        Teléfono
+        {i18n.FORM.FORM_CONTACT.TELEPHONE}
       </label>
       <div class="relative">
         <input
@@ -50,8 +69,8 @@
           id="phone"
           name="phone"
           class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
-          focus:outline-none focus:ring-2 focus:ring-black focus:border-black block w-full p-2.5"
-          placeholder="Número de teléfono"
+          focus:outline-none focus:ring-2 focus:ring-[#ff0] focus:border-[#ff0] block w-full p-2.5"
+          placeholder={i18n.FORM.FORM_CONTACT.TELEPHONE_PLACEHOLDER}
           required
         />
       </div>
@@ -84,7 +103,7 @@
 
       <div
         id="dropdown-menu"
-        class="hidden absolute z-10 w-48 bg-white rounded-lg shadow-lg"
+        class="hidden absolute z-10 w-48 bg-white rounded-lg shadow-lg border-2 border-[#ff0]"
       >
         <ul class="py-2 text-sm text-gray-700">
           <!-- Argentina -->
@@ -202,7 +221,7 @@
 
     <div class="mb-4 pt-4">
       <label for="message" class="block mb-2 text-sm font-bold"
-        >Tu Mensaje</label
+        >{i18n.FORM.FORM_CONTACT.MESSAGE}</label
       >
       <textarea
         id="message"
@@ -210,17 +229,17 @@
         rows="4"
         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300
       focus:outline-none focus:ring-2
-      focus:ring-black focus:border-black"
-        placeholder="Ingrese su mensaje..."></textarea>
+      focus:ring-[#ff0] focus:border-[#ff0]"
+        placeholder={i18n.FORM.FORM_CONTACT.MESSAGE_PLACEHOLDER}></textarea>
     </div>
 
     <button
       type="submit"
-      class="w-full text-black bg-white/90 hover:bg-yellow-500/80 hover:scale-105 transition focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center"
-      >Enviar</button
+      class="w-full text-black bg-white/90 hover:bg-[#ff0] hover:scale-105 transition focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center"
+      >{i18n.FORM.FORM_CONTACT.SEND}</button
     >
 
-    <input type="hidden" name="_next" value="/" />
+    <input type="hidden" name="_next" value="/gracias" />
     <input type="hidden" name="_captcha" value="false" />
   </form>
 </div>
@@ -276,7 +295,6 @@
 <!-- vanta js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
 ></script>
-
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {

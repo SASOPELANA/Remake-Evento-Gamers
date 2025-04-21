@@ -77,5 +77,25 @@
       "PRIVACY": "Politica de Privacidad"
     },
     "COPYRIGHT": "Todos los derechos reservados."
+  },
+
+  "FORM": {
+    "SEO_TITLE": "Formulario de Contacto | INCA CUP 2026",
+    "SEO_DESCRIPTION": "Formulario de contacto para el torneo INCA CUP 2026",
+    "HEADER_TITLE": "INCA CUP 2026",
+    "HEADER_HOME": "INICIO",
+    "FORM_CONTACT": {
+      "TITLE": "CONTACTO",
+      "FULL_NAME": "Nombre y Apellido",
+      "FULL_NAME_PLACEHOLDER": "Escriba su Nombre y Apellido",
+      "EMAIL": "Correo Electronico",
+      "EMAIL_PLACEHOLDER": "Nombre@company.com",
+      "EMAIL_VALIDATION": "Ingrese un correo electronico valido",
+      "TELEPHONE": "Teléfono",
+      "TELEPHONE_PLACEHOLDER": "Escriba su Teléfono",
+      "MESSAGE": "Tu Mensaje",
+      "MESSAGE_PLACEHOLDER": "Ingrese su Mensaje....",
+      "SEND": "Enviar"
+    }
   }
 }
