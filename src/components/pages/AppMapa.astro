@@ -1,5 +1,5 @@
 ---
-import LayoutContacto from '@/layouts/ContactoLayout.astro';
+import LayoutMapa from '@/layouts/MapaLayout.astro';
 
 // Componentes
 import Footer from '@/components/Footer.astro';
@@ -12,11 +12,11 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<LayoutContacto
+<LayoutMapa
   title="Ubicación INCA CUP 2026 - Mapa"
   description="Como llegar al evento INCA CUP 2026"
   icons="/ino.webp"
 >
   <Mapa />
   <Footer />
-</LayoutContacto>
+</LayoutMapa>

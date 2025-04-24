@@ -1,24 +1,25 @@
 ---
+// Componentes
+import Guia from './ListaGuia.astro';
+
 // Importamos la traducción de los idiomas
 import { getI18n } from '@/i18n/';
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
-
-// Idioma
-const currentLang = Astro.currentLocale || '';
 ---
 
 <div
   class="py-20 px-3 md:px-5 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
 >
   <div
-    class="max-w-3xl mx-auto my-5 bg-[#2a0845] p-3 md:p-5 rounded-[10px] shadow-[0_0_15px_rgba(100,0,255,0.6)] border-2 border-[#6a0dad] text-white"
+    class="max-w-3xl mx-auto my-5 bg-[#2a0845] p-3 md:p-5 rounded-[10px] shadow-[0_0_15px_rgba(100,0,255,0.6)] border-2 border-[#6a0dad] text-white
+    animate-flip-up animate-duration-1000 animate-delay-500 animate-ease-out"
   >
     <h1
-      class="text-[#00ffff] text-center mb-5 font-['Press_Start_2P'] text-lg drop-shadow-[0_0_5px_#00ffff]"
+      class="text-[#00ffff] text-center mb-5 font-['Press_Start_2P'] text-xl drop-shadow-[0_0_5px_#00ffff]"
     >
-      <strong> ¡Encuéntranos Aquí! </strong>
+      <strong class="uppercase"> ¡Encuéntranos Aquí! </strong>
     </h1>
 
     <p class="mb-4 text-center leading-relaxed">
@@ -39,6 +40,9 @@ const currentLang = Astro.currentLocale || '';
       >.
     </p>
   </div>
+
+  <!-- Lista de Guia -->
+  <Guia />
 </div>
 
 <!-- Agregar Leaflet.js -->

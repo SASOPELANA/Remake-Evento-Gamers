@@ -1,0 +1,31 @@
+---
+// Importamos la traducción de los idiomas
+import { getI18n } from '@/i18n/';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<section class="flex flex-col items-center gap-4 py-2">
+  <p class="text-gray-100 text-center">
+    Ubicación entre calles Lópes y Planes e H. Yrigoyen, código postal 4530.
+  </p>
+  <dl class="max-w-md text-white divide-y divide-gray-200 py-8">
+    <div class="flex flex-col pb-3">
+      <dt class="mb-1 text-gray-400 md:text-lg">Correo electrónico</dt>
+      <dd class="text-lg font-semibold">mytorneo@example.com</dd>
+    </div>
+    <div class="flex flex-col py-3">
+      <dt class="mb-1 text-gray-400 md:text-lg">Linea de transporte</dt>
+      <dd class="text-lg font-semibold">Empresa San Antonio - Taxis - Buses</dd>
+    </div>
+    <div class="flex flex-col pt-3">
+      <dt class="mb-1 text-gray-400 md:text-lg">Numero de telefono</dt>
+      <dd class="text-lg font-semibold">+54 3878 123456</dd>
+    </div>
+    <div class="flex flex-col pt-3">
+      <dt class="mb-1 text-gray-400 md:text-lg">Estacionamiento</dt>
+      <dd class="text-lg font-semibold">Playón de estacionamiento</dd>
+    </div>
+  </dl>
+</section>
