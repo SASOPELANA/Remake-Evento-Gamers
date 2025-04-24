@@ -1,0 +1,62 @@
+---
+// Importamos la traducción de los idiomas
+import { getI18n } from '@/i18n/';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+
+// Idioma
+const currentLang = Astro.currentLocale || '';
+---
+
+<div
+  class="py-20 px-3 md:px-5 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+>
+  <div
+    class="max-w-3xl mx-auto my-5 bg-[#2a0845] p-3 md:p-5 rounded-[10px] shadow-[0_0_15px_rgba(100,0,255,0.6)] border-2 border-[#6a0dad] text-white"
+  >
+    <h1
+      class="text-[#00ffff] text-center mb-5 font-['Press_Start_2P'] text-lg drop-shadow-[0_0_5px_#00ffff]"
+    >
+      <strong> ¡Encuéntranos Aquí! </strong>
+    </h1>
+
+    <p class="mb-4 text-center leading-relaxed">
+      Prepárate para la acción. Este es el lugar donde se vivirá la emoción del
+      <strong class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
+        INCA CUP 2026
+      </strong> evento gamer.
+    </p>
+
+    <!-- Mapa con Leaflet.js -->
+    <div id="map" class="relative h-[300px] md:h-[500px] rounded-lg z-0"></div>
+
+    <p class="mt-4 text-center text-gray-200 text-sm">
+      Haz clic en el mapa para interactuar o <a
+        href="https://maps.app.goo.gl/cvZbuKiinFhE3n437"
+        target="_blank"
+        class="text-[#00ffff] hover:underline">ver en Google Maps</a
+      >.
+    </p>
+  </div>
+</div>
+
+<!-- Agregar Leaflet.js -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const map = L.map('map').setView([-23.136224, -64.323235], 15); // Coordenadas del lugar
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap',
+    }).addTo(map);
+    L.marker([-23.136224, -64.323235])
+      .addTo(map)
+      .bindPopup('Plaza General José de San Martín')
+      .openPopup();
+  });
+</script>
