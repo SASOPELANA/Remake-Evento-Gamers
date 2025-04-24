@@ -4,18 +4,18 @@ import { getI18n } from '@/i18n/';
 
 const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
-
-// Idioma
-const currentLang = Astro.currentLocale || '';
 ---
 
-<div
-  class="pt-10 pb-50 md:pt-40 relative bg-gradient-to-r from-[#000] via-[#D30691] via-50% to-[#000]"
-  id="vanta-bg"
->
+<div class="pt-10 pb-50 md:pt-40 relative" id="vanta-bg">
+  <div
+    class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-50"
+    style="background-image: url('/ciber-respaldp.webp');"
+  >
+  </div>
+
   <form
     class="max-w-md mx-2 md:mx-auto mt-8 p-6 bg-gray-300/85 rounded-xl shadow-md
-    border-4 border-[#ff0]"
+    border-4 border-[#ff0] animate-flip-up animate-duration-1000 animate-delay-500 animate-ease-out"
     action="https://formsubmit.co/sopekof@gmail.com"
     method="POST"
   >
@@ -309,9 +309,10 @@ const currentLang = Astro.currentLocale || '';
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          backgroundColor: 0x6b2678,
-          color1: 0x932929,
-          color2: 0xf0d634,
+          backgroundColor: 0x000000,
+          backgroundAlpha: 0.4, // trasparencia
+          color1: 0x353537,
+          color2: 0x1f189b,
           colorMode: 'variance',
           separation: 74.0,
           birdSize: 0.9,
