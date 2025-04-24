@@ -19,26 +19,21 @@ const i18n = getI18n({ currentLocale });
     <h1
       class="text-[#00ffff] text-center mb-5 font-['Press_Start_2P'] text-xl drop-shadow-[0_0_5px_#00ffff]"
     >
-      <strong class="uppercase"> ¡Encuéntranos Aquí! </strong>
+      <strong class="uppercase"> {i18n.MAP.LOCATION.TITLE} </strong>
     </h1>
 
-    <p class="mb-4 text-center leading-relaxed">
-      Prepárate para la acción. Este es el lugar donde se vivirá la emoción del
-      <strong class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
-        INCA CUP 2026
-      </strong> evento gamer.
-    </p>
+    <p
+      class="mb-4 text-center leading-relaxed"
+      set:html={i18n.MAP.LOCATION.SUB_TITLE}
+    />
 
     <!-- Mapa con Leaflet.js -->
     <div id="map" class="relative h-[300px] md:h-[500px] rounded-lg z-0"></div>
 
-    <p class="mt-4 text-center text-gray-200 text-sm">
-      Haz clic en el mapa para interactuar o <a
-        href="https://maps.app.goo.gl/cvZbuKiinFhE3n437"
-        target="_blank"
-        class="text-[#00ffff] hover:underline">ver en Google Maps</a
-      >.
-    </p>
+    <p
+      class="mt-4 text-center text-gray-200 text-sm"
+      set:html={i18n.MAP.LOCATION.GOOGLES_MAP}
+    />
   </div>
 
   <!-- Lista de Guia -->

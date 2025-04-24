@@ -97,5 +97,29 @@
       "MESSAGE_PLACEHOLDER": "Ingrese su Mensaje....",
       "SEND": "Enviar"
     }
+  },
+
+  "MAP": {
+    "SEO_TITLE": "Ubicación | INCA CUP 2026",
+    "SEO_DESCRIPTION": "Ubicación del torneo INCA CUP 2026",
+    "HEADER_TITLE": "INCA CUP 2026",
+    "HEADER_HOME": "INICIO",
+    "LOCATION": {
+      "TITLE": "¡Encuéntranos Aquí! ",
+      "SUB_TITLE": "Prepárate para la acción. Este es el lugar donde se vivirá la emoción del <strong class='text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]'>INCA CUP 2026</strong> evento gamer.",
+      "INTERACT_DESCRIPTION": "Haz clic en el mapa para interactuar o <a href='https://maps.app.goo.gl/cvZbuKiinFhE3n437' target='_blank' class='text-[#00ffff] hover:underline'>ver en Google Maps</a>.",
+      "GOOGLES_MAP": "Haz clic en el mapa para interactuar o <a href='https://maps.app.goo.gl/cvZbuKiinFhE3n437' target='_blank' class='text-[#00ffff] hover:underline'>ver en Google Maps</a>."
+    },
+    "LIST": {
+      "TITLE": "Ubicación entre calles Lópes y Planes e H. Yrigoyen, código postal 4530.",
+      "LIST_1": "Correo electrónico.",
+      "LIST_2": "mytorneo@example.com",
+      "LIST_3": "Linea de transporte",
+      "LIST_4": "Empresa San Antonio - Taxis - Buses.",
+      "LIST_5": "Numero de teléfono.",
+      "LIST_6": "+54 3878 123456.",
+      "LIST_7": "Estacionamiento.",
+      "LIST_8": "Playón de estacionamiento."
+    }
   }
 }
