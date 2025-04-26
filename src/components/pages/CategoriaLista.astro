@@ -1,69 +1,52 @@
 ---
-import Card from './CardCategorias.astro';
+import luchaImg from '../../../public/categorias/img/juegos-lucha.webp';
+import icoMando from '../../../public/categorias/ico/ico-mando.png';
+import icoArcade from '../../../public/categorias/ico/ico-arcada.png';
+import ryuImg from '../../../public/categorias/ico/ryu.png';
 ---
 
-<div class="flex items-center justify-center py-5 px-4 md:py-8 flex-wrap">
-  <button
-    type="button"
-    class="text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800"
-    >All categories</button
-  >
-  <button
-    type="button"
-    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800"
-    >Clospaces</button
-  >
-  <button
-    type="button"
-    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800"
-    >Lucha</button
-  >
-  <button
-    type="button"
-    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800"
-    >Acrcade</button
-  >
-  <button
-    type="button"
-    class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800"
-    >Gaming</button
-  >
+<div class="text-center text-4xl text-[#ff0] py-10">
+  <strong> CATEGORIAS </strong>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4 pb-10 px-4">
-  <div>
-    <Card />
+
+<section class="text-white h-screen grid place-content-center">
+  <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+    <img src={luchaImg.src} alt="juegos de lucha" class="rounded-lg mb-6" />
+
+    <h2
+      class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+    >
+      Juegos de Lucha
+    </h2>
+
+    <p class="text-[#add8e6] mb-4 text-base">
+      Juegos donde los jugadores luchan usando habilidades y movimientos.
+    </p>
+
+    <div class="flex place-content-between mb-4">
+      <div class="flex gap-1.5 items-center">
+        <img src={icoMando.src} alt="ico-mando" class="size-5" />
+        <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">Fighters</p>
+      </div>
+
+      <div class="flex gap-1.5 items-center">
+        <img src={icoArcade.src} alt="ico-arcade" class="size-5" />
+        <p class="text-[#add8e6]">Versus</p>
+      </div>
+    </div>
+
+    <hr class="text-[#1e3a8a] mb-4" />
+
+    <div class="flex items-center gap-4">
+      <img
+        src={ryuImg.src}
+        alt="ryu"
+        class="rounded-full w-[33px] h-[33px] border border-white"
+      />
+
+      <p class="text-[#add8e6]">
+        Mas información <span class="text-white">aquí. </span>
+      </p>
+    </div>
   </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-  <div>
-    <Card />
-  </div>
-</div>
+</section>
