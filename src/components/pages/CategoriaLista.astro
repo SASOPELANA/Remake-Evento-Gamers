@@ -16,14 +16,26 @@ import futbolImg from '../../../public/categorias/img/futbol-img.webp';
 import futbolImgMini from '../../../public/categorias/ico/futbol-img-mini.png';
 import icoFutbol1 from '../../../public/categorias/ico/ico-futbol-2.png';
 import icoFutbol2 from '../../../public/categorias/ico/ico-futbol-1.png';
+
+// Imágenes Especiales / Extras
+import cosplayImg from '../../../public/categorias/img/cosplay-img-.webp';
+import cosplayImgMini from '../../../public/categorias/ico/cosplay-img-mini.png';
+import icoCosplay1 from '../../../public/categorias/ico/cosplay-ico-1.png';
+import icoCosplay2 from '../../../public/categorias/ico/cosplayer-ico-2.png';
+
+// Imágenes Competitivos Generales
+import competitivosImg from '../../../public/categorias/img/team-gamers-img.webp';
+import competitivosImgMini from '../../../public/categorias/ico/streamer-img-mini.png';
+import icoCompetitivos1 from '../../../public/categorias/ico/ico-team.png';
+import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
 ---
 
 <div class="text-center text-4xl text-[#ff0] py-10">
-  <strong> CATEGORIAS </strong>
+  <strong> CATEGORÍAS </strong>
 </div>
 
 <section class="text-white h-screen grid place-content-center">
-  <!-- card 1 -->
+  <!-- Card 1 - Lucha -->
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
@@ -80,7 +92,7 @@ import icoFutbol2 from '../../../public/categorias/ico/ico-futbol-1.png';
       </div>
     </div>
 
-    <!-- card 2 -->
+    <!-- Card 2 - Mobas -->
 
     <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
       <!-- contenedor fantasma -->
@@ -138,7 +150,301 @@ import icoFutbol2 from '../../../public/categorias/ico/ico-futbol-1.png';
       </div>
     </div>
 
-    <!-- card 3 -->
+    <!-- Card 3 - Futbol -->
+
+    <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+      <!-- contenedor fantasma -->
+      <div class="relative mb-6 group">
+        <img src={futbolImg.src} alt="juegos de lucha" class="rounded-lg" />
+
+        <div
+          class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+        >
+          <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
+        </div>
+      </div>
+      <!-- fin contenedor fantasma -->
+
+      <h2
+        class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+      >
+        Juegos de Fútbol
+      </h2>
+
+      <p class="text-[#add8e6] mb-4 text-base">
+        Juega y compete en partidos de fútbol de 11 jugadores.
+      </p>
+
+      <div class="flex place-content-between mb-4">
+        <div class="flex gap-1.5 items-center">
+          <img src={icoFutbol1.src} alt="ico-futbol" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">!Vamos¡</p>
+        </div>
+
+        <div class="flex gap-1.5 items-center">
+          <img src={icoFutbol2.src} alt="ico-futbol" class="size-6" />
+          <p class="text-[#add8e6]">Versus</p>
+        </div>
+      </div>
+
+      <hr class="text-[#1e3a8a] mb-4" />
+
+      <div class="flex items-center gap-4">
+        <img
+          src={futbolImgMini.src}
+          alt="ryu"
+          class="rounded-full w-[33px] h-[33px] border border-white"
+        />
+
+        <p class="text-[#add8e6]">
+          Mas información <a
+            href="#"
+            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
+            >aquí.
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 - Especiales / Extras -->
+
+    <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+      <!-- contenedor fantasma -->
+      <div class="relative mb-6 group">
+        <img src={cosplayImg.src} alt="juegos de lucha" class="rounded-lg" />
+
+        <div
+          class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+        >
+          <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
+        </div>
+      </div>
+      <!-- fin contenedor fantasma -->
+
+      <h2
+        class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+      >
+        Especiales / Extras
+      </h2>
+
+      <p class="text-[#add8e6] mb-4 text-base">
+        Cosplay de personajes de vídeo juegos y animes favoritos.
+      </p>
+
+      <div class="flex place-content-between mb-4">
+        <div class="flex gap-1.5 items-center">
+          <img src={icoCosplay1.src} alt="ico-cosplay1" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
+            Creatividad
+          </p>
+        </div>
+
+        <div class="flex gap-1.5 items-center">
+          <img src={icoCosplay2.src} alt="ico-cosplay2" class="size-5" />
+          <p class="text-[#add8e6]">Presentación</p>
+        </div>
+      </div>
+
+      <hr class="text-[#1e3a8a] mb-4" />
+
+      <div class="flex items-center gap-4">
+        <img
+          src={cosplayImgMini.src}
+          alt="ryu"
+          class="rounded-full w-[33px] h-[33px] border border-white"
+        />
+
+        <p class="text-[#add8e6]">
+          Mas información <a
+            href="#"
+            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
+            >aquí.
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 5 - Competitivos Generales -->
+
+    <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+      <!-- contenedor fantasma -->
+      <div class="relative mb-6 group">
+        <img
+          src={competitivosImg.src}
+          alt="juegos de lucha"
+          class="rounded-lg"
+        />
+
+        <div
+          class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+        >
+          <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
+        </div>
+      </div>
+      <!-- fin contenedor fantasma -->
+
+      <h2
+        class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+      >
+        Competitivos Generales
+      </h2>
+
+      <p class="text-[#add8e6] mb-4 text-base">
+        Streamer, equipos, mejor jugador, jugador estratégico.
+      </p>
+
+      <div class="flex place-content-between mb-4">
+        <div class="flex gap-1.5 items-center">
+          <img
+            src={icoCompetitivos1.src}
+            alt="ico-competitivos1"
+            class="size-5"
+          />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">Generales</p>
+        </div>
+
+        <div class="flex gap-1.5 items-center">
+          <img
+            src={icoCompetitivos2.src}
+            alt="ico-competitivos2"
+            class="size-6"
+          />
+          <p class="text-[#add8e6]">Transmisión</p>
+        </div>
+      </div>
+
+      <hr class="text-[#1e3a8a] mb-4" />
+
+      <div class="flex items-center gap-4">
+        <img
+          src={competitivosImgMini.src}
+          alt="ryu"
+          class="rounded-full w-[33px] h-[33px] border border-white"
+        />
+
+        <p class="text-[#add8e6]">
+          Mas información <a
+            href="#"
+            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
+            >aquí.
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 6 - Divertidas / Humorísticas  -->
+
+    <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+      <!-- contenedor fantasma -->
+      <div class="relative mb-6 group">
+        <img src={futbolImg.src} alt="juegos de lucha" class="rounded-lg" />
+
+        <div
+          class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+        >
+          <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
+        </div>
+      </div>
+      <!-- fin contenedor fantasma -->
+
+      <h2
+        class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+      >
+        Juegos de Fútbol
+      </h2>
+
+      <p class="text-[#add8e6] mb-4 text-base">
+        Juega y compete en partidos de fútbol de 11 jugadores.
+      </p>
+
+      <div class="flex place-content-between mb-4">
+        <div class="flex gap-1.5 items-center">
+          <img src={icoFutbol1.src} alt="ico-futbol" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">!Vamos¡</p>
+        </div>
+
+        <div class="flex gap-1.5 items-center">
+          <img src={icoFutbol2.src} alt="ico-futbol" class="size-6" />
+          <p class="text-[#add8e6]">Versus</p>
+        </div>
+      </div>
+
+      <hr class="text-[#1e3a8a] mb-4" />
+
+      <div class="flex items-center gap-4">
+        <img
+          src={futbolImgMini.src}
+          alt="ryu"
+          class="rounded-full w-[33px] h-[33px] border border-white"
+        />
+
+        <p class="text-[#add8e6]">
+          Mas información <a
+            href="#"
+            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
+            >aquí.
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 7 - Visuales / Ambientación -->
+
+    <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+      <!-- contenedor fantasma -->
+      <div class="relative mb-6 group">
+        <img src={futbolImg.src} alt="juegos de lucha" class="rounded-lg" />
+
+        <div
+          class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+        >
+          <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
+        </div>
+      </div>
+      <!-- fin contenedor fantasma -->
+
+      <h2
+        class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+      >
+        Juegos de Fútbol
+      </h2>
+
+      <p class="text-[#add8e6] mb-4 text-base">
+        Juega y compete en partidos de fútbol de 11 jugadores.
+      </p>
+
+      <div class="flex place-content-between mb-4">
+        <div class="flex gap-1.5 items-center">
+          <img src={icoFutbol1.src} alt="ico-futbol" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">!Vamos¡</p>
+        </div>
+
+        <div class="flex gap-1.5 items-center">
+          <img src={icoFutbol2.src} alt="ico-futbol" class="size-6" />
+          <p class="text-[#add8e6]">Versus</p>
+        </div>
+      </div>
+
+      <hr class="text-[#1e3a8a] mb-4" />
+
+      <div class="flex items-center gap-4">
+        <img
+          src={futbolImgMini.src}
+          alt="ryu"
+          class="rounded-full w-[33px] h-[33px] border border-white"
+        />
+
+        <p class="text-[#add8e6]">
+          Mas información <a
+            href="#"
+            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
+            >aquí.
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 8 - Temáticos / Dinámicos  -->
 
     <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
       <!-- contenedor fantasma -->
