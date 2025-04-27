@@ -4,6 +4,18 @@ import icoMando from '../../../public/categorias/ico/ico-mando.png';
 import icoArcade from '../../../public/categorias/ico/ico-arcada.png';
 import ryuImg from '../../../public/categorias/ico/ryu.png';
 import fantasmaIco from '../../../public/categorias/ico/fantasma.png';
+
+// Imágenes e iconos - Mobas
+import mobaImg from '../../../public/categorias/img/mobas-img.webp';
+import icoMoba from '../../../public/categorias/ico/lol-ico-1.png';
+import icoMoba1 from '../../../public/categorias/ico/moba-2.png';
+import icoMoba2 from '../../../public/categorias/ico/moba-1.png';
+
+// Imágenes e iconos - Fútbol
+import futbolImg from '../../../public/categorias/img/futbol-img.webp';
+import futbolImgMini from '../../../public/categorias/ico/futbol-img-mini.png';
+import icoFutbol1 from '../../../public/categorias/ico/ico-futbol-2.png';
+import icoFutbol2 from '../../../public/categorias/ico/ico-futbol-1.png';
 ---
 
 <div class="text-center text-4xl text-[#ff0] py-10">
@@ -11,56 +23,175 @@ import fantasmaIco from '../../../public/categorias/ico/fantasma.png';
 </div>
 
 <section class="text-white h-screen grid place-content-center">
-  <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
-    <!-- contenedor fantasma -->
-    <div class="relative mb-6 group">
-      <img src={luchaImg.src} alt="juegos de lucha" class="rounded-lg" />
+  <!-- card 1 -->
 
-      <div
-        class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+      <!-- contenedor fantasma -->
+      <div class="relative mb-6 group">
+        <img src={luchaImg.src} alt="juegos de lucha" class="rounded-lg" />
+
+        <div
+          class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+        >
+          <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
+        </div>
+      </div>
+      <!-- fin contenedor fantasma -->
+
+      <h2
+        class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
       >
-        <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
-      </div>
-    </div>
-    <!-- fin contenedor fantasma -->
+        Juegos de Lucha
+      </h2>
 
-    <h2
-      class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
-    >
-      Juegos de Lucha
-    </h2>
-
-    <p class="text-[#add8e6] mb-4 text-base">
-      Juegos donde los jugadores luchan usando habilidades y movimientos.
-    </p>
-
-    <div class="flex place-content-between mb-4">
-      <div class="flex gap-1.5 items-center">
-        <img src={icoMando.src} alt="ico-mando" class="size-5" />
-        <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">Fighters</p>
-      </div>
-
-      <div class="flex gap-1.5 items-center">
-        <img src={icoArcade.src} alt="ico-arcade" class="size-5" />
-        <p class="text-[#add8e6]">Versus</p>
-      </div>
-    </div>
-
-    <hr class="text-[#1e3a8a] mb-4" />
-
-    <div class="flex items-center gap-4">
-      <img
-        src={ryuImg.src}
-        alt="ryu"
-        class="rounded-full w-[33px] h-[33px] border border-white"
-      />
-
-      <p class="text-[#add8e6]">
-        Mas información <span
-          class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
-          >aquí.
-        </span>
+      <p class="text-[#add8e6] mb-4 text-base">
+        Juegos donde los jugadores luchan usando habilidades y movimientos.
       </p>
+
+      <div class="flex place-content-between mb-4">
+        <div class="flex gap-1.5 items-center">
+          <img src={icoMando.src} alt="ico-mando" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">Fighters</p>
+        </div>
+
+        <div class="flex gap-1.5 items-center">
+          <img src={icoArcade.src} alt="ico-arcade" class="size-5" />
+          <p class="text-[#add8e6]">Versus</p>
+        </div>
+      </div>
+
+      <hr class="text-[#1e3a8a] mb-4" />
+
+      <div class="flex items-center gap-4">
+        <img
+          src={ryuImg.src}
+          alt="ryu"
+          class="rounded-full w-[33px] h-[33px] border border-white"
+        />
+
+        <p class="text-[#add8e6]">
+          Mas información <a
+            href="#"
+            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
+            >aquí.
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- card 2 -->
+
+    <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+      <!-- contenedor fantasma -->
+      <div class="relative mb-6 group">
+        <img src={mobaImg.src} alt="juegos de lucha" class="rounded-lg" />
+
+        <div
+          class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+        >
+          <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
+        </div>
+      </div>
+      <!-- fin contenedor fantasma -->
+
+      <h2
+        class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+      >
+        MOBAs
+      </h2>
+
+      <p class="text-[#add8e6] mb-4 text-base">
+        Mobas juegos de acción y estrategia en tiempo real de 1 a 5 jugadores.
+      </p>
+
+      <div class="flex place-content-between mb-4">
+        <div class="flex gap-1.5 items-center">
+          <img src={icoMoba1.src} alt="ico-mobas" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
+            Multijugador
+          </p>
+        </div>
+
+        <div class="flex gap-1.5 items-center">
+          <img src={icoMoba2.src} alt="ico-mobas" class="size-6" />
+          <p class="text-[#add8e6]">Versus</p>
+        </div>
+      </div>
+
+      <hr class="text-[#1e3a8a] mb-4" />
+
+      <div class="flex items-center gap-4">
+        <img
+          src={icoMoba.src}
+          alt="ryu"
+          class="rounded-full w-[33px] h-[33px] border border-white"
+        />
+
+        <p class="text-[#add8e6]">
+          Mas información <a
+            href="#"
+            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
+            >aquí.
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- card 3 -->
+
+    <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+      <!-- contenedor fantasma -->
+      <div class="relative mb-6 group">
+        <img src={futbolImg.src} alt="juegos de lucha" class="rounded-lg" />
+
+        <div
+          class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+        >
+          <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
+        </div>
+      </div>
+      <!-- fin contenedor fantasma -->
+
+      <h2
+        class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+      >
+        Juegos de Fútbol
+      </h2>
+
+      <p class="text-[#add8e6] mb-4 text-base">
+        Juega y compete en partidos de fútbol de 11 jugadores.
+      </p>
+
+      <div class="flex place-content-between mb-4">
+        <div class="flex gap-1.5 items-center">
+          <img src={icoFutbol1.src} alt="ico-futbol" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">!Vamos¡</p>
+        </div>
+
+        <div class="flex gap-1.5 items-center">
+          <img src={icoFutbol2.src} alt="ico-futbol" class="size-6" />
+          <p class="text-[#add8e6]">Versus</p>
+        </div>
+      </div>
+
+      <hr class="text-[#1e3a8a] mb-4" />
+
+      <div class="flex items-center gap-4">
+        <img
+          src={futbolImgMini.src}
+          alt="ryu"
+          class="rounded-full w-[33px] h-[33px] border border-white"
+        />
+
+        <p class="text-[#add8e6]">
+          Mas información <a
+            href="#"
+            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
+            >aquí.
+          </a>
+        </p>
+      </div>
     </div>
   </div>
 </section>
