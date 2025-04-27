@@ -3,6 +3,7 @@ import luchaImg from '../../../public/categorias/img/juegos-lucha.webp';
 import icoMando from '../../../public/categorias/ico/ico-mando.png';
 import icoArcade from '../../../public/categorias/ico/ico-arcada.png';
 import ryuImg from '../../../public/categorias/ico/ryu.png';
+import fantasmaIco from '../../../public/categorias/ico/fantasma.png';
 ---
 
 <div class="text-center text-4xl text-[#ff0] py-10">
@@ -11,7 +12,17 @@ import ryuImg from '../../../public/categorias/ico/ryu.png';
 
 <section class="text-white h-screen grid place-content-center">
   <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
-    <img src={luchaImg.src} alt="juegos de lucha" class="rounded-lg mb-6" />
+    <!-- contenedor fantasma -->
+    <div class="relative mb-6 group">
+      <img src={luchaImg.src} alt="juegos de lucha" class="rounded-lg" />
+
+      <div
+        class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
+      >
+        <img src={fantasmaIco.src} alt="versus-ico" class="size-10" />
+      </div>
+    </div>
+    <!-- fin contenedor fantasma -->
 
     <h2
       class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
@@ -45,7 +56,10 @@ import ryuImg from '../../../public/categorias/ico/ryu.png';
       />
 
       <p class="text-[#add8e6]">
-        Mas información <span class="text-white">aquí. </span>
+        Mas información <span
+          class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
+          >aquí.
+        </span>
       </p>
     </div>
   </div>
