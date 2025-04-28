@@ -28,6 +28,24 @@ import competitivosImg from '../../../public/categorias/img/team-gamers-img.webp
 import competitivosImgMini from '../../../public/categorias/ico/streamer-img-mini.png';
 import icoCompetitivos1 from '../../../public/categorias/ico/ico-team.png';
 import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
+
+// Imágenes - Divertidas / Humorísticas
+import divertidasImg from '../../../public/categorias/img/juegos-divertidos-img .webp';
+import divertidasImgMini from '../../../public/categorias/ico/humor-img-mini-removebg-preview.png';
+import icoDivertidas1 from '../../../public/categorias/ico/humor-ico1.png';
+import icoDivertidas2 from '../../../public/categorias/ico/humor-ico2.png';
+
+// Imágenes Visuales / Ambientación
+import visualesImg from '../../../public/categorias/img/stick-arcade-img.webp';
+import visualesImgMini from '../../../public/categorias/ico/auricular-mini.png';
+import icoVisuales1 from '../../../public/categorias/ico/asesorio-ico-1.png';
+import icoVisuales2 from '../../../public/categorias/ico/acesorio-ico-2.png';
+
+// Imágenes Temáticos / Dinámicos
+import tematicosImg from '../../../public/categorias/img/dance-img.webp';
+import tematicosImgMini from '../../../public/categorias/ico/dance-img-mini.png';
+import icoTematicos1 from '../../../public/categorias/ico/dance-ico-1.png';
+import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
 ---
 
 <div class="text-center text-4xl lg:text-6xl text-[#ff0] py-10 lg:py-20">
@@ -342,7 +360,7 @@ import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
     <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
       <!-- contenedor fantasma -->
       <div class="relative mb-6 group">
-        <img src={futbolImg.src} alt="juegos de lucha" class="rounded-lg" />
+        <img src={divertidasImg.src} alt="juegos de lucha" class="rounded-lg" />
 
         <div
           class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
@@ -355,22 +373,22 @@ import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
       <h2
         class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
       >
-        Juegos de Fútbol
+        Divertidas / Humorísticas
       </h2>
 
       <p class="text-[#add8e6] mb-4 text-base">
-        Juega y compete en partidos de fútbol de 11 jugadores.
+        Categoría de juegos divertidos y humorísticas para todos.
       </p>
 
       <div class="flex place-content-between mb-4">
         <div class="flex gap-1.5 items-center">
-          <img src={icoFutbol1.src} alt="ico-futbol" class="size-5" />
-          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">!Vamos¡</p>
+          <img src={icoDivertidas1.src} alt="ico-humor1" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">Diversión</p>
         </div>
 
         <div class="flex gap-1.5 items-center">
-          <img src={icoFutbol2.src} alt="ico-futbol" class="size-6" />
-          <p class="text-[#add8e6]">Versus</p>
+          <img src={icoDivertidas2.src} alt="ico-humor2" class="size-5" />
+          <p class="text-[#add8e6]">Humor</p>
         </div>
       </div>
 
@@ -378,7 +396,7 @@ import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
 
       <div class="flex items-center gap-4">
         <img
-          src={futbolImgMini.src}
+          src={divertidasImgMini.src}
           alt="ryu"
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
@@ -398,7 +416,11 @@ import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
     <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
       <!-- contenedor fantasma -->
       <div class="relative mb-6 group">
-        <img src={futbolImg.src} alt="juegos de lucha" class="rounded-lg" />
+        <img
+          src={visualesImg.src}
+          alt="visuales y ambientación"
+          class="rounded-lg"
+        />
 
         <div
           class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
@@ -411,22 +433,22 @@ import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
       <h2
         class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
       >
-        Juegos de Fútbol
+        Visuales / Ambientación
       </h2>
 
       <p class="text-[#add8e6] mb-4 text-base">
-        Juega y compete en partidos de fútbol de 11 jugadores.
+        Estilo gamers, accesorios, decoración y fotografías.
       </p>
 
       <div class="flex place-content-between mb-4">
         <div class="flex gap-1.5 items-center">
-          <img src={icoFutbol1.src} alt="ico-futbol" class="size-5" />
-          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">!Vamos¡</p>
+          <img src={icoVisuales1.src} alt="ico-visual1" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">Accesorios</p>
         </div>
 
         <div class="flex gap-1.5 items-center">
-          <img src={icoFutbol2.src} alt="ico-futbol" class="size-6" />
-          <p class="text-[#add8e6]">Versus</p>
+          <img src={icoVisuales2.src} alt="ico-visual2" class="size-5" />
+          <p class="text-[#add8e6]">Fotografía</p>
         </div>
       </div>
 
@@ -434,7 +456,7 @@ import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
 
       <div class="flex items-center gap-4">
         <img
-          src={futbolImgMini.src}
+          src={visualesImgMini.src}
           alt="ryu"
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
@@ -454,7 +476,7 @@ import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
     <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
       <!-- contenedor fantasma -->
       <div class="relative mb-6 group">
-        <img src={futbolImg.src} alt="juegos de lucha" class="rounded-lg" />
+        <img src={tematicosImg.src} alt="tematicos" class="rounded-lg" />
 
         <div
           class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer"
@@ -467,22 +489,22 @@ import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
       <h2
         class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
       >
-        Juegos de Fútbol
+        Temáticos / Dinámicos
       </h2>
 
       <p class="text-[#add8e6] mb-4 text-base">
-        Juega y compete en partidos de fútbol de 11 jugadores.
+        Dance, música, preguntas de cultura y mucho más.
       </p>
 
       <div class="flex place-content-between mb-4">
         <div class="flex gap-1.5 items-center">
-          <img src={icoFutbol1.src} alt="ico-futbol" class="size-5" />
-          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">!Vamos¡</p>
+          <img src={icoTematicos1.src} alt="ico-tematicos" class="size-5" />
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">!Baile¡</p>
         </div>
 
         <div class="flex gap-1.5 items-center">
-          <img src={icoFutbol2.src} alt="ico-futbol" class="size-6" />
-          <p class="text-[#add8e6]">Versus</p>
+          <img src={icoTematicos2.src} alt="ico-tematicos" class="size-5" />
+          <p class="text-[#add8e6]">Musica</p>
         </div>
       </div>
 
@@ -490,8 +512,8 @@ import icoCompetitivos2 from '../../../public/categorias/ico/streamer-ico.png';
 
       <div class="flex items-center gap-4">
         <img
-          src={futbolImgMini.src}
-          alt="ryu"
+          src={tematicosImgMini.src}
+          alt="tematicos"
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
 
