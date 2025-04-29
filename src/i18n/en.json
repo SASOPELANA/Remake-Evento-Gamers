@@ -141,6 +141,44 @@
         "DESCRIPTION": "Mobas action and real-time strategy games for 1 to 5 players.",
         "SUB_TITLE_1": "Multiplayer",
         "SUB_TITLE_2": "Versus"
+      },
+      "CARD_3": {
+        "TITLE": "Football Games",
+        "DESCRIPTION": "Play and compete in 11-player football matches.",
+        "SUB_TITLE_1": "Let's Go!",
+        "SUB_TITLE_2": "Versus"
+      },
+      "CARD_4": {
+        "TITLE": "Specials / Extras",
+        "DESCRIPTION": "Cosplay of favorite video game and anime characters.",
+        "SUB_TITLE_1": "Creativity",
+        "SUB_TITLE_2": "Presentation"
+      },
+      "CARD_5": {
+        "TITLE": "General Competitives",
+        "DESCRIPTION": "Streamer, teams, best player, strategic player.",
+        "SUB_TITLE_1": "General",
+        "SUB_TITLE_2": "Broadcasting"
+      },
+      "CARD_6": {
+        "TITLE": "Fun / Humorous",
+        "DESCRIPTION": "Category of fun and humorous games for everyone.",
+        "SUB_TITLE_1": "Fun",
+        "SUB_TITLE_2": "Humor"
+      },
+
+      "CARD_7": {
+        "TITLE": "Visuals / Setting",
+        "DESCRIPTION": "Gamer style, accessories, decoration, and photography.",
+        "SUB_TITLE_1": "Accessories",
+        "SUB_TITLE_2": "Photography"
+      },
+
+      "CARD_8": {
+        "TITLE": "Thematic / Dynamic",
+        "DESCRIPTION": "Dance, music, cultural questions, and much more.",
+        "SUB_TITLE_1": "Dance",
+        "SUB_TITLE_2": "Music"
       }
     }
   }

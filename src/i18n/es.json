@@ -142,6 +142,44 @@
         "DESCRIPTION": "Mobas juegos de acción y estrategia en tiempo real de 1 a 5 jugadores.",
         "SUB_TITLE_1": "Multijugador",
         "SUB_TITLE_2": "Versus"
+      },
+      "CARD_3": {
+        "TITLE": "Juegos de Fútbol",
+        "DESCRIPTION": "Juega y compete en partidos de fútbol de 11 jugadores.",
+        "SUB_TITLE_1": "!Vamos¡",
+        "SUB_TITLE_2": "Versus"
+      },
+      "CARD_4": {
+        "TITLE": "Especiales / Extras",
+        "DESCRIPTION": "Cosplay de personajes de vídeo juegos y animes favoritos.",
+        "SUB_TITLE_1": "Creatividad",
+        "SUB_TITLE_2": "Presentación"
+      },
+      "CARD_5": {
+        "TITLE": "Competitivos Generales",
+        "DESCRIPTION": "Streamer, equipos, mejor jugador, jugador estratégico.",
+        "SUB_TITLE_1": "Generales",
+        "SUB_TITLE_2": "Transmisión"
+      },
+      "CARD_6": {
+        "TITLE": "Divertidas / Humorísticas",
+        "DESCRIPTION": "Categoría de juegos divertidos y humorísticas para todos.",
+        "SUB_TITLE_1": "Diversión",
+        "SUB_TITLE_2": "Humor"
+      },
+
+      "CARD_7": {
+        "TITLE": "Visuales / Ambientación",
+        "DESCRIPTION": "Estilo gamers, accesorios, decoración y fotografías.",
+        "SUB_TITLE_1": "Accesorios",
+        "SUB_TITLE_2": "Fotografía"
+      },
+
+      "CARD_8": {
+        "TITLE": "Temáticos / Dinámicos",
+        "DESCRIPTION": "Dance, música, preguntas de cultura y mucho más.",
+        "SUB_TITLE_1": "!Baile¡",
+        "SUB_TITLE_2": "Música"
       }
     }
   }
