@@ -1,4 +1,16 @@
 ---
+import LogoButton from './LogoButton.astro';
+
+// Importamos la traducción de los idiomas
+import { getI18n } from '@/i18n/';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+
+// Idioma
+const currentLang = Astro.currentLocale || '';
+
+// Imágenes e iconos - Lucha
 import luchaImg from '../../../public/categorias/img/juegos-lucha.webp';
 import icoMando from '../../../public/categorias/ico/ico-mando.png';
 import icoArcade from '../../../public/categorias/ico/ico-arcada.png';
@@ -49,7 +61,7 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
 ---
 
 <div class="text-center text-4xl lg:text-6xl text-[#ff0] py-10 lg:py-20">
-  <strong> CATEGORÍAS </strong>
+  <strong> {i18n.CATEGORIES.CARD.TITLE} </strong>
 </div>
 
 <section
@@ -77,22 +89,26 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
       <h2
         class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
       >
-        Juegos de Lucha
+        {i18n.CATEGORIES.CARD.CARD_1.TITLE}
       </h2>
 
       <p class="text-[#add8e6] mb-4 text-base">
-        Juegos donde los jugadores luchan usando habilidades y movimientos.
+        {i18n.CATEGORIES.CARD.CARD_1.DESCRIPTION}
       </p>
 
       <div class="flex place-content-between mb-4">
         <div class="flex gap-1.5 items-center">
           <img src={icoMando.src} alt="ico-mando" class="size-5" />
-          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">Fighters</p>
+          <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
+            {i18n.CATEGORIES.CARD.CARD_1.SUB_TITLE_1}
+          </p>
         </div>
 
         <div class="flex gap-1.5 items-center">
           <img src={icoArcade.src} alt="ico-arcade" class="size-5" />
-          <p class="text-[#add8e6]">Versus</p>
+          <p class="text-[#add8e6]">
+            {i18n.CATEGORIES.CARD.CARD_1.SUB_TITLE_2}
+          </p>
         </div>
       </div>
 
@@ -105,11 +121,13 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
 
-        <p class="text-[#add8e6]">
-          Mas información <a
+        <p class="text-[#add8e6] flex gap-2">
+          {i18n.CATEGORIES.CARD.MORE_INFO_ALL}
+          <a
             href="#"
-            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
-            >aquí.
+            class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+          >
+            <LogoButton />
           </a>
         </p>
       </div>
@@ -133,24 +151,26 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
       <h2
         class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
       >
-        MOBAs
+        {i18n.CATEGORIES.CARD.CARD_2.TITLE}
       </h2>
 
       <p class="text-[#add8e6] mb-4 text-base">
-        Mobas juegos de acción y estrategia en tiempo real de 1 a 5 jugadores.
+        {i18n.CATEGORIES.CARD.CARD_2.DESCRIPTION}
       </p>
 
       <div class="flex place-content-between mb-4">
         <div class="flex gap-1.5 items-center">
           <img src={icoMoba1.src} alt="ico-mobas" class="size-5" />
           <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
-            Multijugador
+            {i18n.CATEGORIES.CARD.CARD_2.SUB_TITLE_1}
           </p>
         </div>
 
         <div class="flex gap-1.5 items-center">
           <img src={icoMoba2.src} alt="ico-mobas" class="size-6" />
-          <p class="text-[#add8e6]">Versus</p>
+          <p class="text-[#add8e6]">
+            {i18n.CATEGORIES.CARD.CARD_2.SUB_TITLE_2}
+          </p>
         </div>
       </div>
 
@@ -163,11 +183,14 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
 
-        <p class="text-[#add8e6]">
-          Mas información <a
+        <p class="text-[#add8e6] flex gap-2">
+          {i18n.CATEGORIES.CARD.MORE_INFO_ALL}
+
+          <a
             href="#"
-            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
-            >aquí.
+            class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+          >
+            <LogoButton />
           </a>
         </p>
       </div>
@@ -219,11 +242,12 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
 
-        <p class="text-[#add8e6]">
+        <p class="text-[#add8e6] flex gap-2">
           Mas información <a
             href="#"
-            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
-            >aquí.
+            class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+          >
+            <LogoButton />
           </a>
         </p>
       </div>
@@ -277,11 +301,12 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
 
-        <p class="text-[#add8e6]">
+        <p class="text-[#add8e6] flex gap-2">
           Mas información <a
             href="#"
-            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
-            >aquí.
+            class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+          >
+            <LogoButton />
           </a>
         </p>
       </div>
@@ -345,11 +370,12 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
 
-        <p class="text-[#add8e6]">
+        <p class="text-[#add8e6] flex gap-2">
           Mas información <a
             href="#"
-            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
-            >aquí.
+            class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+          >
+            <LogoButton />
           </a>
         </p>
       </div>
@@ -401,11 +427,12 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
 
-        <p class="text-[#add8e6]">
+        <p class="text-[#add8e6] flex gap-2">
           Mas información <a
             href="#"
-            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
-            >aquí.
+            class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+          >
+            <LogoButton />
           </a>
         </p>
       </div>
@@ -461,11 +488,12 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
 
-        <p class="text-[#add8e6]">
+        <p class="text-[#add8e6] flex gap-2">
           Mas información <a
             href="#"
-            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
-            >aquí.
+            class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+          >
+            <LogoButton />
           </a>
         </p>
       </div>
@@ -517,11 +545,12 @@ import icoTematicos2 from '../../../public/categorias/ico/musica-ico-2.png';
           class="rounded-full w-[33px] h-[33px] border border-white"
         />
 
-        <p class="text-[#add8e6]">
+        <p class="text-[#add8e6] flex gap-2">
           Mas información <a
             href="#"
-            class="text-white cursor-pointer hover:text-[#00ffff] hover:drop-shadow-[0_0_5px_#00ffff]"
-            >aquí.
+            class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+          >
+            <LogoButton />
           </a>
         </p>
       </div>
