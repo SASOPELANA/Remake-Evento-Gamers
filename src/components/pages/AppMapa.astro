@@ -1,0 +1,22 @@
+---
+import LayoutMapa from "@/layouts/MapaLayout.astro";
+
+// Componentes
+import Footer from "@/components/Footer.astro";
+import Mapa from "./Ubicacion.astro";
+
+// Importamos la traducción de los idiomas
+import { getI18n } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<LayoutMapa
+  title={i18n.MAP.SEO_TITLE}
+  description={i18n.MAP.SEO_DESCRIPTION}
+  icons="/ino.webp"
+>
+  <Mapa />
+  <Footer />
+</LayoutMapa>

@@ -1,0 +1,89 @@
+---
+// Componentes
+import Guia from "./ListaGuia.astro";
+
+// Importamos la traducción de los idiomas
+import { getI18n } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<div
+  class="py-20 px-3 md:px-5 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+>
+  <div
+    class="max-w-3xl mx-auto my-5 bg-[#2a0845] p-3 md:p-5 rounded-[10px] shadow-[0_0_15px_rgba(100,0,255,0.6)] border-2 border-[#6a0dad] text-white
+    animate-flip-up animate-duration-1000 animate-delay-500 animate-ease-out"
+  >
+    <h1
+      class="text-[#00ffff] text-center mb-5 font-['Press_Start_2P'] text-xl drop-shadow-[0_0_5px_#00ffff]"
+    >
+      <strong class="uppercase"> {i18n.MAP.LOCATION.TITLE} </strong>
+    </h1>
+
+    <p
+      class="mb-4 text-center leading-relaxed"
+      set:html={i18n.MAP.LOCATION.SUB_TITLE}
+    />
+
+    <!-- Mapa con Leaflet.js -->
+    <div id="map" class="relative h-[300px] md:h-[500px] rounded-lg z-0"></div>
+
+    <p
+      class="mt-4 text-center text-gray-200 text-sm"
+      set:html={i18n.MAP.LOCATION.GOOGLES_MAP}
+    />
+  </div>
+
+  <!-- Lista de Guia -->
+  <Guia />
+</div>
+
+<!-- Agregar Leaflet.js -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  let map: any;
+
+  const initMap = () => {
+    const mapContainer = document.getElementById("map");
+    if (!mapContainer) return;
+
+    // Si Leaflet no está cargado esperando un poco o salir
+    if (typeof L === "undefined") return;
+
+    // Limpiar instancia previa si existe (aunque el before-swap debería manejarlo)
+    if (map) {
+      map.remove();
+      map = null;
+    }
+
+    // Inicializar mapa
+    map = L.map("map").setView([-23.136224, -64.323235], 15);
+    
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap",
+    }).addTo(map);
+
+    L.marker([-23.136224, -64.323235])
+      .addTo(map)
+      .bindPopup("Plaza General José de San Martín")
+      .openPopup();
+  };
+
+  // Inicializar en navegación
+  document.addEventListener("astro:page-load", initMap);
+
+  // Limpiar antes de cambiar de página
+  document.addEventListener("astro:before-swap", () => {
+    if (map) {
+      map.remove();
+      map = null;
+    }
+  });
+</script>

@@ -1,0 +1,190 @@
+{
+  "SEO_TITLE_1": "INCA CUP 2026",
+  "SEO_DESCRIPTION_1": "Torneo gaming Inca Cup 2026",
+
+  "HEADER": {
+    "LOGO_1": "INCA CUP 2026",
+    "LOGO_2": "SOBRE NOSOTROS",
+    "LOGO_3": "ARENA",
+    "LOGO_4": "CATEGORIAS",
+    "LOGO_5": "CONTACTO",
+    "IDIOMA": {
+      "TITLE": "IDIOMA",
+      "ENGLISH": "English (US)",
+      "SPANISH": "Español"
+    },
+    "AUTH": {
+      "LOGIN": "Iniciar Sesión",
+      "REGISTER": "Registrarse"
+    }
+  },
+
+  "TIMER": {
+    "TITLE": "¡Prepárate para el Evento!",
+    "DAYS": {
+      "PLURAL": "Días",
+      "SINGULAR": "Día"
+    },
+    "HOURS": {
+      "PLURAL": "Horas",
+      "SINGULAR": "Hora"
+    },
+    "MINUTES": {
+      "PLURAL": "Minutos",
+      "SINGULAR": "Minuto"
+    },
+    "SECONDS": {
+      "PLURAL": "Segundos",
+      "SINGULAR": "Segundo"
+    },
+    "ALERT": "¡El evento INCA CUP 2025 a comenzado!!!"
+  },
+
+  "ABOUT": {
+    "TITLE": "<strong class='text-white'>Somos </strong> <strong class='text-yellow-400'>INCA CUP 2026</strong>",
+    "DESCRIPTION": "¡La <strong class='text-yellow-300'>INCA CUP 2026</strong> está por comenzar! El torneo que reunirá a los <strong class='text-yellow-300'>mejores jugadores de Argentina y Latinoamérica</strong>, junto a invitados especiales de élite. Demuestra que eres el mejor en los juegos más competitivos, gana premios exclusivos y llévate la gloria. ¿Estás listo para representar a tu región? <strong class='text-yellow-400'>¡Inscríbete y sé parte de la leyenda!</strong>"
+  },
+
+  "ARENA": {
+    "TITLE": "Arena de Combate"
+  },
+
+  "EXTENDED_ARENA": {
+    "TITLE": "Arena Extendida",
+    "BOTTON": {
+      "TITLE_1": "VER ALINEACIÓN EXTENDIDA",
+      "TITLE_2": "OCULTAR ARENA EXTENDIDA"
+    }
+  },
+
+  "PIXEL_ZONE": {
+    "TITLE": "ZONA DE PÍXELES"
+  },
+
+  "VIDEO": {
+    "TITLE": "Tercera Edición de Inca Cup"
+  },
+
+  "FOOTER": {
+    "TITLE": "INCA CUP 2026",
+    "RESOURCE": {
+      "TITLE": "RECURSOS",
+      "CONTACT": "Contacto",
+      "TO_ARRIVE": "Cómo llegar?"
+    },
+    "FOLLOW": {
+      "TITLE": "SIGAMOS EN"
+    },
+    "LEGAL": {
+      "TITLE": "LEGAL",
+      "TERMS": "Terminos y Condiciones",
+      "PRIVACY": "Politica de Privacidad"
+    },
+    "COPYRIGHT": "Todos los derechos reservados."
+  },
+
+  "FORM": {
+    "SEO_TITLE": "Formulario de Contacto | INCA CUP 2026",
+    "SEO_DESCRIPTION": "Formulario de contacto para el torneo INCA CUP 2026",
+    "HEADER_TITLE": "INCA CUP 2026",
+    "HEADER_HOME": "INICIO",
+    "FORM_CONTACT": {
+      "TITLE": "CONTACTO",
+      "FULL_NAME": "Nombre y Apellido",
+      "FULL_NAME_PLACEHOLDER": "Escriba su Nombre y Apellido",
+      "EMAIL": "Correo Electronico",
+      "EMAIL_PLACEHOLDER": "Nombre@company.com",
+      "EMAIL_VALIDATION": "Ingrese un correo electronico valido",
+      "TELEPHONE": "Teléfono",
+      "TELEPHONE_PLACEHOLDER": "Escriba su Teléfono",
+      "MESSAGE": "Tu Mensaje",
+      "MESSAGE_PLACEHOLDER": "Ingrese su Mensaje....",
+      "SEND": "Enviar"
+    }
+  },
+
+  "MAP": {
+    "SEO_TITLE": "Ubicación | INCA CUP 2026",
+    "SEO_DESCRIPTION": "Ubicación del torneo INCA CUP 2026",
+    "HEADER_TITLE": "INCA CUP 2026",
+    "HEADER_HOME": "INICIO",
+    "LOCATION": {
+      "TITLE": "¡Encuéntranos Aquí! ",
+      "SUB_TITLE": "Prepárate para la acción. Este es el lugar donde se vivirá la emoción del <strong class='text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]'>INCA CUP 2026</strong> evento gamer.",
+      "INTERACT_DESCRIPTION": "Haz clic en el mapa para interactuar o <a href='https://maps.app.goo.gl/cvZbuKiinFhE3n437' target='_blank' class='text-[#00ffff] hover:underline'>ver en Google Maps</a>.",
+      "GOOGLES_MAP": "Haz clic en el mapa para interactuar o <a href='https://maps.app.goo.gl/cvZbuKiinFhE3n437' target='_blank' class='text-[#00ffff] hover:underline'>ver en Google Maps</a>."
+    },
+    "LIST": {
+      "TITLE": "Ubicación entre calles Lópes y Planes e H. Yrigoyen, código postal 4530.",
+      "LIST_1": "Correo electrónico.",
+      "LIST_2": "mytorneo@example.com",
+      "LIST_3": "Linea de transporte",
+      "LIST_4": "Empresa San Antonio - Taxis - Buses.",
+      "LIST_5": "Numero de teléfono.",
+      "LIST_6": "+54 3878 123456.",
+      "LIST_7": "Estacionamiento.",
+      "LIST_8": "Playón de estacionamiento."
+    }
+  },
+
+  "CATEGORIES": {
+    "SEO_TITLE": "Categorias | INCA CUP 2026",
+    "SEO_DESCRIPTION": "Categorias del torneo INCA CUP 2026",
+    "HEADER_TITLE": "INCA CUP 2026",
+    "HEADER_HOME": "INICIO",
+    "CARD": {
+      "TITLE": "CATEGORIAS",
+      "MORE_INFO_ALL": "Más Información",
+      "CARD_1": {
+        "TITLE": "Juegos de Lucha",
+        "DESCRIPTION": "Juegos donde los jugadores luchan usando habilidades y movimientos.",
+        "SUB_TITLE_1": "Fighters",
+        "SUB_TITLE_2": "Versus"
+      },
+      "CARD_2": {
+        "TITLE": "MOBAs",
+        "DESCRIPTION": "Mobas juegos de acción y estrategia en tiempo real de 1 a 5 jugadores.",
+        "SUB_TITLE_1": "Multijugador",
+        "SUB_TITLE_2": "Versus"
+      },
+      "CARD_3": {
+        "TITLE": "Juegos de Fútbol",
+        "DESCRIPTION": "Juega y compete en partidos de fútbol de 11 jugadores.",
+        "SUB_TITLE_1": "!Vamos¡",
+        "SUB_TITLE_2": "Versus"
+      },
+      "CARD_4": {
+        "TITLE": "Especiales / Extras",
+        "DESCRIPTION": "Cosplay de personajes de vídeo juegos y animes favoritos.",
+        "SUB_TITLE_1": "Creatividad",
+        "SUB_TITLE_2": "Presentación"
+      },
+      "CARD_5": {
+        "TITLE": "Competitivos Generales",
+        "DESCRIPTION": "Streamer, equipos, mejor jugador, jugador estratégico.",
+        "SUB_TITLE_1": "Generales",
+        "SUB_TITLE_2": "Transmisión"
+      },
+      "CARD_6": {
+        "TITLE": "Divertidas / Humorísticas",
+        "DESCRIPTION": "Categoría de juegos divertidos y humorísticas para todos.",
+        "SUB_TITLE_1": "Diversión",
+        "SUB_TITLE_2": "Humor"
+      },
+
+      "CARD_7": {
+        "TITLE": "Visuales / Ambientación",
+        "DESCRIPTION": "Estilo gamers, accesorios, decoración y fotografías.",
+        "SUB_TITLE_1": "Accesorios",
+        "SUB_TITLE_2": "Fotografía"
+      },
+
+      "CARD_8": {
+        "TITLE": "Temáticos / Dinámicos",
+        "DESCRIPTION": "Dance, música, preguntas de cultura y mucho más.",
+        "SUB_TITLE_1": "!Baile¡",
+        "SUB_TITLE_2": "Música"
+      }
+    }
+  }
+}

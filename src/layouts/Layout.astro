@@ -1,0 +1,73 @@
+---
+// Tailwind
+import "../styles/global.css";
+
+// Interface de Astro
+interface Props {
+  title?: string;
+  icons?: string;
+  description?: string;
+}
+
+// Creamos una constante que recibe las props
+const { title, description, icons } = Astro.props;
+
+//  Componente
+import Header from "../components/Header.astro";
+import SEO from "../components/SEO.astro";
+
+// Idioma
+const currentLang = Astro.currentLocale || "es";
+
+// View Transitions
+import { ClientRouter } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang={currentLang}>
+  <head>
+    <SEO
+      title={title || "Inca Cup 2026"}
+      description={description ||
+        " Evento Gamers, Inca Cup 2026. La mejor experiencia para gamers"}
+      icons={icons}
+    />
+    <ClientRouter />
+
+    <!-- Scripts para Flowbite -->
+    <script src="../scripts/main.js"></script>
+  </head>
+  <body
+    class="font-onest animate-fade animate-duration-1000 animate-ease-in animate-delay-100"
+  >
+    <Header />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    box-sizing: border-box;
+    font-family: "Onest Variable", sans-serif;
+    background: #961aa7;
+
+    /* Desplazamiento del scroll para la animación, lentamente*/
+    scroll-behavior: smooth;
+  }
+
+  #header-nav {
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+  }
+
+  @keyframes blur {
+    to {
+      box-shadow:
+        0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+        0px 0px 0 1px rgba(0, 0, 0, 0.3);
+      background: rgba(150, 26, 167, 0.3);
+      backdrop-filter: blur(10px);
+    }
+  }
+</style>

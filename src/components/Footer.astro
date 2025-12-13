@@ -1,0 +1,111 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Logo from "@/assets/images/somos-ica-cup.webp";
+
+// Importamos la traducción de los idiomas
+import { getI18n } from "../i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+
+// Idioma
+const currentLang = Astro.currentLocale || "";
+---
+
+<footer class="bg-white">
+  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <div class="md:flex md:justify-between">
+      <div class="mb-6 md:mb-0">
+        <a href={`/${currentLang}/`} class="flex items-center">
+          <Image
+            src={Logo}
+            class="h-8 me-3 w-auto rounded-full"
+            alt="FlowBite Logo"
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap uppercase text-black"
+            >{i18n.FOOTER.TITLE}</span
+          >
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">
+            {i18n.FOOTER.RESOURCE.TITLE}
+          </h2>
+          <ul class="text-gray-500 font-medium">
+            <li class="mb-4">
+              <a
+                href={`/${currentLang}/contacto#contacto-nav`}
+                class="hover:underline">{i18n.FOOTER.RESOURCE.CONTACT}</a
+              >
+            </li>
+            <li>
+              <a
+                href={`/${currentLang}/mapa#mapa-nav`}
+                class="hover:underline text-yellow-500 hover:decoration-wavy"
+                >{i18n.FOOTER.RESOURCE.TO_ARRIVE}</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">
+            {i18n.FOOTER.FOLLOW.TITLE}
+          </h2>
+          <ul class="text-gray-500 font-medium">
+            <li class="mb-4">
+              <a href="#" class="hover:underline">Twitch</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline">Discord</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">
+            {i18n.FOOTER.LEGAL.TITLE}
+          </h2>
+          <ul class="text-gray-500 font-medium">
+            <li class="mb-4">
+              <a href="#" class="hover:underline">{i18n.FOOTER.LEGAL.PRIVACY}</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:underline">{i18n.FOOTER.LEGAL.TERMS}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span class="text-sm text-gray-700 sm:text-center"
+        >© 2026 <a class="">Inca Cup™. {i18n.FOOTER.COPYRIGHT} </a>
+      </span>
+      <div class="flex mt-4 sm:justify-center sm:mt-0">
+        <a href="#" class="text-gray-500 hover:text-gray-900">
+          <Icon name="mdi:facebook" class="w-4 h-4" />
+          <span class="sr-only">Facebook page</span>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
+          <Icon name="mdi:discord" class="w-4 h-4" />
+          <span class="sr-only">Discord community</span>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
+          <Icon name="mdi:twitter" class="w-4 h-4" />
+          <span class="sr-only">Twitter page</span>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
+          <Icon name="mdi:github" class="w-4 h-4" />
+          <span class="sr-only">GitHub account</span>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
+          <Icon name="mdi:instagram" class="w-4 h-4" />
+          <span class="sr-only">Instagram account</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

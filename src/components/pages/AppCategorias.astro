@@ -1,0 +1,22 @@
+---
+import LayoutCategoria from "@/layouts/CategoriasLayout.astro";
+
+// Componentes
+import Footer from "@/components/Footer.astro";
+import CagoriasList from "./CategoriaLista.astro";
+
+// Importamos la traducción de los idiomas
+import { getI18n } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<LayoutCategoria
+  title={i18n.CATEGORIES.SEO_TITLE}
+  description={i18n.CATEGORIES.SEO_DESCRIPTION}
+  icons="/ino.webp"
+>
+  <CagoriasList />
+  <Footer />
+</LayoutCategoria>

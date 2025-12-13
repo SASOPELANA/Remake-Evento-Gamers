@@ -1,0 +1,189 @@
+{
+  "SEO_TITLE_1": "INCA CUP 2026",
+  "SEO_DESCRIPTION_1": "Inca Cup 2026 Gaming Tournament",
+
+  "HEADER": {
+    "LOGO_1": "INCA CUP 2026",
+    "LOGO_2": "ABOUT US",
+    "LOGO_3": "ARENA",
+    "LOGO_4": "CATEGORIES",
+    "LOGO_5": "CONTACT",
+    "IDIOMA": {
+      "TITLE": "LANGUAGE",
+      "ENGLISH": "English (US)",
+      "SPANISH": "Español"
+    },
+    "AUTH": {
+      "LOGIN": "Log in",
+      "REGISTER": "Sign up"
+    }
+  },
+
+  "TIMER": {
+    "TITLE": "Get Ready for the Event!",
+    "DAYS": {
+      "PLURAL": "Days",
+      "SINGULAR": "Day"
+    },
+    "HOURS": {
+      "PLURAL": "Hours",
+      "SINGULAR": "Hour"
+    },
+    "MINUTES": {
+      "PLURAL": "Minutes",
+      "SINGULAR": "Minute"
+    },
+    "SECONDS": {
+      "PLURAL": "Seconds",
+      "SINGULAR": "Second"
+    },
+    "ALERT": "The INCA CUP 2025 event has started!!!"
+  },
+
+  "ABOUT": {
+    "TITLE": "<strong class='text-white' >We are </strong> <strong class='text-yellow-400'>INCA CUP 2026</strong>",
+    "DESCRIPTION": "<strong class='text-yellow-300'>INCA CUP 2026</strong> is about to begin! The tournament that will bring together the <strong class='text-yellow-300'>best players from Argentina and Latin America</strong>, along with elite special guests. Prove you are the best in the most competitive games, win exclusive prizes, and claim the glory. Are you ready to represent your region? <strong class='text-yellow-400'>Sign up and become part of the legend!</strong>"
+  },
+
+  "ARENA": {
+    "TITLE": "Combat Arena"
+  },
+
+  "EXTENDED_ARENA": {
+    "TITLE": "Extended Arena",
+    "BOTTON": {
+      "TITLE_1": "VIEW EXTENDED LINEUP",
+      "TITLE_2": "HIDE EXTENDED ARENA"
+    }
+  },
+  "PIXEL_ZONE": {
+    "TITLE": "PIXEL ZONE"
+  },
+
+  "VIDEO": {
+    "TITLE": "Third Edition of Inca Cup"
+  },
+
+  "FOOTER": {
+    "TITLE": "INCA CUP 2026",
+    "RESOURCE": {
+      "TITLE": "RESOURCES",
+      "CONTACT": "Contact",
+      "TO_ARRIVE": "How to get there?"
+    },
+    "FOLLOW": {
+      "TITLE": "FOLLOW US"
+    },
+    "LEGAL": {
+      "TITLE": "LEGAL",
+      "TERMS": "Terms and Conditions",
+      "PRIVACY": "Privacy Policy"
+    },
+    "COPYRIGHT": "All rights reserved."
+  },
+
+  "FORM": {
+    "SEO_TITLE": "Contact Form | INCA CUP 2026",
+    "SEO_DESCRIPTION": "Contact form for the INCA CUP 2026 tournament",
+    "HEADER_TITLE": "INCA CUP 2026",
+    "HEADER_HOME": "HOME",
+    "FORM_CONTACT": {
+      "TITLE": "CONTACT",
+      "FULL_NAME": "Full Name",
+      "FULL_NAME_PLACEHOLDER": "Enter your Full Name",
+      "EMAIL": "Email",
+      "EMAIL_PLACEHOLDER": "Name@company.com",
+      "EMAIL_VALIDATION": "Enter a valid email address",
+      "TELEPHONE": "Phone",
+      "TELEPHONE_PLACEHOLDER": "Enter your Phone Number",
+      "MESSAGE": "Your Message",
+      "MESSAGE_PLACEHOLDER": "Enter your Message...",
+      "SEND": "Send"
+    }
+  },
+
+  "MAP": {
+    "SEO_TITLE": "Location | INCA CUP 2026",
+    "SEO_DESCRIPTION": "Location of the INCA CUP 2026 tournament",
+    "HEADER_TITLE": "INCA CUP 2026",
+    "HEADER_HOME": "HOME",
+    "LOCATION": {
+      "TITLE": "Find Us Here!",
+      "SUB_TITLE": "Get ready for action. This is the place where the excitement of the <strong class='text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]'>INCA CUP 2026</strong> gaming event will unfold.",
+      "INTERACT_DESCRIPTION": "Click on the map to interact or <a href='https://maps.app.goo.gl/cvZbuKiinFhE3n437' target='_blank' class='text-[#00ffff] hover:underline'>view on Google Maps</a>.",
+      "GOOGLES_MAP": "Click on the map to interact or <a href='https://maps.app.goo.gl/cvZbuKiinFhE3n437' target='_blank' class='text-[#00ffff] hover:underline'>view on Google Maps</a>."
+    },
+    "LIST": {
+      "TITLE": "Location between Lópes y Planes and H. Yrigoyen streets, ZIP code 4530.",
+      "LIST_1": "Email.",
+      "LIST_2": "mytorneo@example.com",
+      "LIST_3": "Transport line.",
+      "LIST_4": "San Antonio company – Taxis – Buses.",
+      "LIST_5": "Phone number.",
+      "LIST_6": "+54 3878 123456.",
+      "LIST_7": "Parking.",
+      "LIST_8": "Parking lot."
+    }
+  },
+
+  "CATEGORIES": {
+    "SEO_TITLE": "Categories | INCA CUP 2026",
+    "SEO_DESCRIPTION": "Categories of the INCA CUP 2026 tournament",
+    "HEADER_TITLE": "INCA CUP 2026",
+    "HEADER_HOME": "HOME",
+    "CARD": {
+      "TITLE": "CATEGORIES",
+      "MORE_INFO_ALL": "More Information",
+      "CARD_1": {
+        "TITLE": "Fighting Games",
+        "DESCRIPTION": "Games where players fight using skills and moves.",
+        "SUB_TITLE_1": "Fighters",
+        "SUB_TITLE_2": "Versus"
+      },
+      "CARD_2": {
+        "TITLE": "MOBAs",
+        "DESCRIPTION": "Mobas action and real-time strategy games for 1 to 5 players.",
+        "SUB_TITLE_1": "Multiplayer",
+        "SUB_TITLE_2": "Versus"
+      },
+      "CARD_3": {
+        "TITLE": "Football Games",
+        "DESCRIPTION": "Play and compete in 11-player football matches.",
+        "SUB_TITLE_1": "Let's Go!",
+        "SUB_TITLE_2": "Versus"
+      },
+      "CARD_4": {
+        "TITLE": "Specials / Extras",
+        "DESCRIPTION": "Cosplay of favorite video game and anime characters.",
+        "SUB_TITLE_1": "Creativity",
+        "SUB_TITLE_2": "Presentation"
+      },
+      "CARD_5": {
+        "TITLE": "General Competitives",
+        "DESCRIPTION": "Streamer, teams, best player, strategic player.",
+        "SUB_TITLE_1": "General",
+        "SUB_TITLE_2": "Broadcasting"
+      },
+      "CARD_6": {
+        "TITLE": "Fun / Humorous",
+        "DESCRIPTION": "Category of fun and humorous games for everyone.",
+        "SUB_TITLE_1": "Fun",
+        "SUB_TITLE_2": "Humor"
+      },
+
+      "CARD_7": {
+        "TITLE": "Visuals / Setting",
+        "DESCRIPTION": "Gamer style, accessories, decoration, and photography.",
+        "SUB_TITLE_1": "Accessories",
+        "SUB_TITLE_2": "Photography"
+      },
+
+      "CARD_8": {
+        "TITLE": "Thematic / Dynamic",
+        "DESCRIPTION": "Dance, music, cultural questions, and much more.",
+        "SUB_TITLE_1": "Dance",
+        "SUB_TITLE_2": "Music"
+      }
+    }
+  }
+}

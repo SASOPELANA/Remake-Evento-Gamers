@@ -1,0 +1,31 @@
+/* Importamos estilos de flowbite */
+@import "flowbite";
+
+@import "flag-icon-css/css/flag-icons.min.css";
+
+/* Importamos tailwind animaciones */
+@import "tailwindcss-animated";
+
+/* Dejar tailwind al ultimo para no sobreescribir */
+@import "tailwindcss";
+
+/* 💡 VARIABLES PERSONALIZADAS */
+/* 🎨 Sombra personalizada color rosa para textos importantes */
+@theme {
+  --text-shadow-rosa: 0 2px 5px rgb(255 0 128 / 0.8);
+}
+
+/* agregamos fuentes */
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 400 500 700;
+  font-display: swap;
+  src: url("../assets/fonts/Onest-Font/Onest-VariableFont_wght.ttf")
+    format("woff2");
+}
+
+/* variables  */
+@theme {
+  --font-onest: "Onest";
+}

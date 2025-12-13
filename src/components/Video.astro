@@ -1,0 +1,33 @@
+---
+// Importamos la traducción de los idiomas
+import { getI18n } from "../i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<div
+  class="bg-gradient-to-r from-[#961aa7] via-[#D30691] via-50% to-[#961aa7] pb-10"
+>
+  <section class="w-full p-2 md:p-20 max-w-6xl mx-auto pt-15">
+    <strong
+      class="flex justify-center uppercase md:text-5xl tracking-wide text-center font-semibold mb-10
+    text-balance mx-auto text-[#ff0] text-2xl"
+    >
+      {i18n.VIDEO.TITLE}
+    </strong>
+
+    <lite-youtube
+      class="shadow-2xl shadow-white/10 rounded-xl"
+      videoid="w162ddvLWuQ"
+      start="3"
+      videotitle="INCA CUP 2026 - Torneo de videojuegos"
+    >
+    </lite-youtube>
+  </section>
+</div>
+
+<!-- Importar LiteYoutube, para una mejor optimización en el sitio web -->
+<script>
+  import "@justinribeiro/lite-youtube";
+</script>

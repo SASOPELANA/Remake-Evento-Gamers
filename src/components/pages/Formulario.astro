@@ -1,0 +1,363 @@
+---
+// Importamos la traducción de los idiomas
+import { getI18n } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+import { getImage } from "astro:assets";
+import bgImageSrc from "@/assets/images/ciber-respaldo.webp";
+
+const bgImage = await getImage({ src: bgImageSrc, format: "webp" });
+---
+
+<div
+  class="relative flex items-center justify-center min-h-screen py-20"
+  id="vanta-bg"
+>
+  <div
+    class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-50"
+    style={`background-image: url('${bgImage.src}');`}
+  >
+  </div>
+
+  <form
+    class="w-full max-w-md mx-4 p-6 bg-gray-300/85 rounded-xl shadow-md z-10
+    border-4 border-[#ff0] animate-flip-up animate-duration-1000 animate-delay-500 animate-ease-out"
+    action="https://formsubmit.co/sopekof@gmail.com"
+    method="POST"
+  >
+    <h2
+      class="text-2xl md:text-3xl font-bold mb-6 text-gray-900 uppercase flex justify-center items-center"
+    >
+      {i18n.FORM.FORM_CONTACT.TITLE}
+    </h2>
+
+    <div class="mb-4">
+      <label for="name" class="block mb-2 text-sm font-bold text-gray-900"
+        >{i18n.FORM.FORM_CONTACT.FULL_NAME}</label
+      >
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
+      focus:outline-none focus:ring-2 focus:ring-[#ff0] focus:border-[#ff0] block w-full p-2.5"
+        placeholder={i18n.FORM.FORM_CONTACT.FULL_NAME_PLACEHOLDER}
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="email" class="block mb-2 text-sm font-bold text-gray-900">
+        {i18n.FORM.FORM_CONTACT.EMAIL}
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
+    focus:outline-none focus:ring-2 focus:ring-[#ff0] focus:border-[#ff0] block w-full p-2.5 peer"
+        placeholder={i18n.FORM.FORM_CONTACT.EMAIL_PLACEHOLDER}
+        required
+      />
+      <p class="text-red-500/80 text-sm hidden peer-invalid:block">
+        {i18n.FORM.FORM_CONTACT.EMAIL_VALIDATION}
+      </p>
+    </div>
+
+    <!-- Sección teléfono -->
+    <div class="mb-4 py-1">
+      <label for="phone" class="block mb-2 text-sm font-bold text-gray-900">
+        {i18n.FORM.FORM_CONTACT.TELEPHONE}
+      </label>
+      <div class="relative">
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
+          focus:outline-none focus:ring-2 focus:ring-[#ff0] focus:border-[#ff0] block w-full p-2.5"
+          placeholder={i18n.FORM.FORM_CONTACT.TELEPHONE_PLACEHOLDER}
+          required
+        />
+      </div>
+    </div>
+
+    <div class="relative bg-white py-1 rounded-lg">
+      <button
+        id="dropdown-button"
+        data-dropdown-toggle="dropdown-menu"
+        class="inline-flex items-center p-2 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none"
+        type="button"
+      >
+        <span id="selected-flag" class="flag-icon flag-icon-ar mr-2"></span>
+        <span id="selected-country">+54 Argentina</span>
+        <svg
+          class="ml-2 w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M1 1l7 7 7-7"></path>
+        </svg>
+      </button>
+
+      <div
+        id="dropdown-menu"
+        class="hidden absolute z-10 w-48 bg-white rounded-lg shadow-lg border-2 border-[#ff0]"
+      >
+        <ul class="py-2 text-sm text-gray-700">
+          <!-- Argentina -->
+          <li>
+            <a
+              href="#"
+              data-code="54"
+              data-name="Argentina"
+              data-flag="flag-icon-ar"
+              class="block px-4 py-2 hover:bg-gray-100"
+            >
+              <span class="flag-icon flag-icon-ar mr-2"></span> +54 Argentina
+            </a>
+          </li>
+          <!-- Chile -->
+          <li>
+            <a
+              href="#"
+              data-code="56"
+              data-name="Chile"
+              data-flag="flag-icon-cl"
+              class="block px-4 py-2 hover:bg-gray-100"
+            >
+              <span class="flag-icon flag-icon-cl mr-2"></span> +56 Chile
+            </a>
+          </li>
+          <!-- Bolivia -->
+          <li>
+            <a
+              href="#"
+              data-code="591"
+              data-name="Bolivia"
+              data-flag="flag-icon-bo"
+              class="block px-4 py-2 hover:bg-gray-100"
+            >
+              <span class="flag-icon flag-icon-bo mr-2"></span> +591 Bolivia
+            </a>
+          </li>
+          <!-- Paraguay -->
+          <li>
+            <a
+              href="#"
+              data-code="595"
+              data-name="Paraguay"
+              data-flag="flag-icon-py"
+              class="block px-4 py-2 hover:bg-gray-100"
+            >
+              <span class="flag-icon flag-icon-py mr-2"></span> +595 Paraguay
+            </a>
+          </li>
+          <!-- Brasil -->
+          <li>
+            <a
+              href="#"
+              data-code="55"
+              data-name="Brasil"
+              data-flag="flag-icon-br"
+              class="block px-4 py-2 hover:bg-gray-100"
+            >
+              <span class="flag-icon flag-icon-br mr-2"></span> +55 Brasil
+            </a>
+          </li>
+          <!-- Uruguay -->
+          <li>
+            <a
+              href="#"
+              data-code="598"
+              data-name="Uruguay"
+              data-flag="flag-icon-uy"
+              class="block px-4 py-2 hover:bg-gray-100"
+            >
+              <span class="flag-icon flag-icon-uy mr-2"></span> +598 Uruguay
+            </a>
+          </li>
+          <!-- Perú -->
+          <li>
+            <a
+              href="#"
+              data-code="51"
+              data-name="Perú"
+              data-flag="flag-icon-pe"
+              class="block px-4 py-2 hover:bg-gray-100"
+            >
+              <span class="flag-icon flag-icon-pe mr-2"></span> +51 Perú
+            </a>
+          </li>
+          <!-- Estados Unidos -->
+          <li>
+            <a
+              href="#"
+              data-code="1"
+              data-name="Estados Unidos"
+              data-flag="flag-icon-us"
+              class="block px-4 py-2 hover:bg-gray-100"
+            >
+              <span class="flag-icon flag-icon-us mr-2"></span> +1 Estados Unidos
+            </a>
+          </li>
+          <!-- México -->
+          <li>
+            <a
+              href="#"
+              data-code="52"
+              data-name="México"
+              data-flag="flag-icon-mx"
+              class="block px-4 py-2 hover:bg-gray-100"
+            >
+              <span class="flag-icon flag-icon-mx mr-2"></span> +52 México
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Fin sección teléfono -->
+
+    <div class="mb-4 pt-4">
+      <label for="message" class="block mb-2 text-sm font-bold"
+        >{i18n.FORM.FORM_CONTACT.MESSAGE}</label
+      >
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300
+      focus:outline-none focus:ring-2
+      focus:ring-[#ff0] focus:border-[#ff0]"
+        placeholder={i18n.FORM.FORM_CONTACT.MESSAGE_PLACEHOLDER}></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full text-black bg-white/90 hover:bg-[#ff0] hover:scale-105 transition focus:ring-4 focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center"
+      >{i18n.FORM.FORM_CONTACT.SEND}</button
+    >
+
+    <input type="hidden" name="_next" value="/gracias" />
+    <input type="hidden" name="_captcha" value="false" />
+  </form>
+</div>
+
+<script>
+  const dropdownButton = document.getElementById("dropdown-button");
+  const dropdownMenu = document.getElementById("dropdown-menu");
+  const selectedFlag = document.getElementById("selected-flag");
+  const selectedCountry = document.getElementById("selected-country");
+  const phoneInput = document.getElementById("phone");
+
+  // Abre o cierra el dropdown al hacer clic
+  if (dropdownButton) {
+    dropdownButton.addEventListener("click", () => {
+      if (dropdownMenu) {
+        dropdownMenu.classList.toggle("hidden");
+      }
+    });
+  }
+
+  // Cambia el número de teléfono y bandera cuando el usuario selecciona un país
+  const selectCountry = (
+    flagClass: string,
+    countryCode: string,
+    countryName: string,
+  ) => {
+    if (selectedFlag) {
+      selectedFlag.className = `flag-icon ${flagClass} mr-2`;
+    }
+    if (selectedCountry) {
+      selectedCountry.textContent = `+${countryCode} ${countryName}`;
+    }
+    if (phoneInput) {
+      (phoneInput as HTMLInputElement).placeholder =
+        `Número de teléfono (+${countryCode})`;
+    }
+    if (dropdownMenu) {
+      dropdownMenu.classList.add("hidden"); // Cierra el dropdown
+    }
+  };
+
+  // Agregar eventos a los elementos del dropdown
+  document.querySelectorAll("#dropdown-menu a").forEach((item) => {
+    item.addEventListener("click", () => {
+      const countryCode = item.getAttribute("data-code") ?? "";
+      const countryName = item.getAttribute("data-name") ?? "";
+      const flagClass = item.getAttribute("data-flag") ?? "";
+      selectCountry(flagClass, countryCode, countryName);
+    });
+  });
+</script>
+
+<!-- vanta js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+></script>
+
+<script>
+  let vantaEffect: any = null;
+
+  const setVanta = () => {
+    if (window.VANTA) {
+      // Si ya existe un efecto previo, lo destruimos para evitar duplicados
+      if (vantaEffect) {
+        vantaEffect.destroy();
+        vantaEffect = null;
+      }
+      
+      // Inicializamos Vanta
+      vantaEffect = window.VANTA.BIRDS({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        backgroundColor: 0x000000,
+        backgroundAlpha: 0.4,
+        color1: 0x353537,
+        color2: 0x1f189b,
+        colorMode: "variance",
+        separation: 74.0,
+        birdSize: 0.9,
+        quantity: 3.0,
+      });
+    }
+  };
+
+  const loadVantaScript = () => {
+    // Si ya está cargado, solo inicializamos
+    if (window.VANTA) {
+      setVanta();
+      return;
+    }
+
+    // Si no está cargado, creamos el script
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js";
+    script.onload = setVanta;
+    document.body.appendChild(script);
+  };
+
+  // Ejecutar en cada navegación (inicial y transiciones)
+  document.addEventListener("astro:page-load", loadVantaScript);
+
+  // Limpiar recurso al salir (opcional pero recomendado)
+  document.addEventListener("astro:before-swap", () => {
+    if (vantaEffect) {
+      vantaEffect.destroy();
+      vantaEffect = null;
+    }
+  });
+</script>

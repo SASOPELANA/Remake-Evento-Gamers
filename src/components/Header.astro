@@ -1,0 +1,198 @@
+---
+// Importamos la traducción de los idiomas
+import { getI18n } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+const currentLang = Astro.currentLocale || "";
+
+import { Image } from "astro:assets";
+import Logo from "@/assets/images/somos-ica-cup.webp";
+
+// Components
+import FlagSpain from "./flags/FlagSpain.astro";
+import FlagUSA from "./flags/FlagUSA.astro";
+import FlagUSACircle from "./flags/FlagUSACircle.astro";
+
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  isHomePage?: boolean;
+  title?: string; // If provided, replaces the default logo text logic for subpages
+  bgClass?: string;
+  navIds?: {
+    navId?: string;
+    menuId?: string;
+  };
+}
+
+const {
+  isHomePage = true,
+  title,
+  bgClass = "bg-[#961aa7]",
+  navIds = { navId: "header-nav", menuId: "navbar-default" },
+} = Astro.props;
+---
+
+<nav id={navIds.navId} class={`sticky top-0 z-50 border-gray-200 ${bgClass}`}>
+  <div
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+  >
+    <a
+      href={isHomePage ? `/${currentLang}/` : "#"}
+      onclick={!isHomePage ? "location.reload(); return false;" : undefined}
+      class="flex items-center space-x-3 rtl:space-x-reverse"
+    >
+      <Image src={Logo} class="h-12 w-auto rounded-full" alt="INCA CUP 2026" />
+      <span
+        class="self-center text-2xl font-bold whitespace-nowrap text-white hover:text-[#ff0]"
+      >
+        {
+          isHomePage ? (
+            <strong>{i18n.HEADER.LOGO_1}</strong>
+          ) : (
+            <strong class="text-[#ff0] hover:underline text-shadow-rosa hover:bg-black/30">
+              {title}
+            </strong>
+          )
+        }
+      </span>
+    </a>
+
+    {/* Mobile Menu Button */}
+    <button
+      data-collapse-toggle={navIds.menuId}
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+      aria-controls={navIds.menuId}
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <Icon name="flowbite:bars-outline" class="w-5 h-5 text-gray-500" />
+    </button>
+
+    <div class="hidden w-full md:block md:w-auto" id={navIds.menuId}>
+      <ul
+        class="font-semibold flex flex-col p-4 text-gray-900 md:p-0 mt-4 border border-gray-100 rounded-lg bg-black/20 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent md:items-center"
+      >
+        {
+          isHomePage ? (
+            <>
+              <li>
+                <a
+                  href={`/${currentLang}#nosotros`}
+                  class="block py-2 px-3 text-white rounded-sm hover:md:bg-transparent hover:bg-[#961aa7]/80 hover:text-[#ff0] md:p-0"
+                >
+                  <strong>{i18n.HEADER.LOGO_2}</strong>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/${currentLang}#arena`}
+                  class="block py-2 px-3 text-white rounded-sm hover:bg-[#961aa7]/80 md:hover:bg-transparent md:border-0 hover:text-[#ff0] md:p-0"
+                >
+                  <strong>{i18n.HEADER.LOGO_3}</strong>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/${currentLang}/categorias#categorias-nav`}
+                  class="block py-2 px-3 text-white rounded-sm hover:bg-[#961aa7]/80 md:hover:bg-transparent md:border-0 hover:text-[#ff0] md:p-0"
+                >
+                  <strong>{i18n.HEADER.LOGO_4}</strong>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`/${currentLang}/contacto#contacto-nav`}
+                  class="block py-2 px-3 text-white rounded-sm hover:bg-[#961aa7]/80 md:hover:bg-transparent md:border-0 md:p-0 hover:text-[#ff0]"
+                >
+                  <strong>{i18n.HEADER.LOGO_5}</strong>
+                </a>
+              </li>
+            </>
+          ) : (
+            <li>
+              <a
+                href={`/${currentLang}/`}
+                class="block py-2 px-3 bg-transparent md:p-0"
+                aria-current="page"
+              >
+                <strong class="md:text-xl text-[#ff0] hover:underline hover:bg-black/30 font-bold text-shadow-rosa hover:rounded-lg">
+                  {i18n.MAP.HEADER_HOME}
+                </strong>
+              </a>
+            </li>
+          )
+        }
+
+        {/* Auth Buttons */}
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-3 md:px-4 text-white rounded-sm md:rounded-full hover:bg-[#961aa7]/80 md:hover:bg-white hover:text-[#ff0] md:hover:text-[#961aa7] transition-all transform md:hover:scale-105 md:border-2 md:border-white"
+          >
+            <strong>{i18n.HEADER.AUTH.LOGIN}</strong>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-3 md:px-4 text-white rounded-sm md:rounded-full hover:bg-[#961aa7]/80 md:hover:bg-white hover:text-[#ff0] md:hover:text-[#961aa7] transition-all transform md:hover:scale-105 md:border-2 md:border-white"
+          >
+            <strong>{i18n.HEADER.AUTH.REGISTER}</strong>
+          </a>
+        </li>
+
+        {/* Language Selector */}
+        <li>
+          <button
+            data-dropdown-toggle="language-dropdown-menu"
+            class="flex gap-2 py-2 px-3 text-black rounded-sm hover:bg-[#961aa7]/80 md:hover:bg-transparent md:border-0 md:hover:text-black md:p-0"
+          >
+            <strong
+              class="text-[#ff0] hover:text-white text-shadow-md text-shadow-red-400 hover:underline hover:decoration-4 hover:cursor-pointer"
+            >
+              {i18n.HEADER.IDIOMA.TITLE}
+            </strong>
+            <FlagUSACircle />
+          </button>
+
+          <div
+            class="z-50 hidden my-4 text-base list-none divide-y divide-gray-100 rounded-lg shadow-sm bg-white/80 w-auto max-w-xs"
+            id="language-dropdown-menu"
+          >
+            <ul class="py-2 font-medium" role="none">
+              <li>
+                <li>
+                  <a
+                    href={`/en${Astro.url.pathname.replace(/^\/(en|es)/, "")}`}
+                    class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white"
+                    role="menuitem"
+                  >
+                    <div class="inline-flex items-center">
+                      <FlagUSA />
+                      <strong> {i18n.HEADER.IDIOMA.ENGLISH} </strong>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`/es${Astro.url.pathname.replace(/^\/(en|es)/, "")}`}
+                    class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white hover:text-bold"
+                    role="menuitem"
+                  >
+                    <div class="inline-flex items-center">
+                      <FlagSpain />
+                      <strong> {i18n.HEADER.IDIOMA.SPANISH} </strong>
+                    </div>
+                  </a>
+                </li>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,214 @@
+---
+import { Image } from 'astro:assets';
+import LogoButton from "./LogoButton.astro";
+import { getI18n } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+
+// --- IMPORTS DE IMÁGENES ---
+
+// Lucha
+import luchaImg from "@/assets/images/categorias/img/juegos-lucha.webp";
+import icoMando from "@/assets/images/categorias/ico/ico-mando.png";
+import icoArcade from "@/assets/images/categorias/ico/ico-arcada.png";
+import ryuImg from "@/assets/images/categorias/ico/ryu.png";
+import fantasmaIco from "@/assets/images/categorias/ico/fantasma.png";
+
+// Mobas
+import mobaImg from "@/assets/images/categorias/img/mobas-img.webp";
+import icoMoba from "@/assets/images/categorias/ico/lol-ico-1.png";
+import icoMoba1 from "@/assets/images/categorias/ico/moba-2.png";
+import icoMoba2 from "@/assets/images/categorias/ico/moba-1.png";
+
+// Fútbol
+import futbolImg from "@/assets/images/categorias/img/futbol-img.webp";
+import futbolImgMini from "@/assets/images/categorias/ico/futbol-img-mini.png";
+import icoFutbol1 from "@/assets/images/categorias/ico/ico-futbol-2.png";
+import icoFutbol2 from "@/assets/images/categorias/ico/ico-futbol-1.png";
+
+// Especiales / Extras
+import cosplayImg from "@/assets/images/categorias/img/cosplay-img-.webp";
+import cosplayImgMini from "@/assets/images/categorias/ico/cosplay-img-mini.png";
+import icoCosplay1 from "@/assets/images/categorias/ico/cosplay-ico-1.png";
+import icoCosplay2 from "@/assets/images/categorias/ico/cosplayer-ico-2.png";
+
+// Competitivos Generales
+import competitivosImg from "@/assets/images/categorias/img/team-gamers-img.webp";
+import competitivosImgMini from "@/assets/images/categorias/ico/streamer-img-mini.png";
+import icoCompetitivos1 from "@/assets/images/categorias/ico/ico-team.png";
+import icoCompetitivos2 from "@/assets/images/categorias/ico/streamer-ico.png";
+
+// Divertidas / Humorísticas
+import divertidasImg from "@/assets/images/categorias/img/juegos-divertidos-img .webp";
+import divertidasImgMini from "@/assets/images/categorias/ico/humor-img-mini-removebg-preview.png";
+import icoDivertidas1 from "@/assets/images/categorias/ico/humor-ico1.png";
+import icoDivertidas2 from "@/assets/images/categorias/ico/humor-ico2.png";
+
+// Visuales / Ambientación
+import visualesImg from "@/assets/images/categorias/img/stick-arcade-img.webp";
+import visualesImgMini from "@/assets/images/categorias/ico/auricular-mini.png";
+import icoVisuales1 from "@/assets/images/categorias/ico/asesorio-ico-1.png";
+import icoVisuales2 from "@/assets/images/categorias/ico/acesorio-ico-2.png";
+
+// Temáticos / Dinámicos
+import tematicosImg from "@/assets/images/categorias/img/dance-img.webp";
+import tematicosImgMini from "@/assets/images/categorias/ico/dance-img-mini.png";
+import icoTematicos1 from "@/assets/images/categorias/ico/dance-ico-1.png";
+import icoTematicos2 from "@/assets/images/categorias/ico/musica-ico-2.png";
+
+// --- DATA CONFIG ---
+
+const CATEGORIES = [
+  {
+    id: "CARD_1",
+    img: luchaImg,
+    ico1: icoMando,
+    ico2: icoArcade,
+    miniImg: ryuImg,
+    alt: "juegos de lucha"
+  },
+  {
+    id: "CARD_2",
+    img: mobaImg,
+    ico1: icoMoba1,
+    ico2: icoMoba2,
+    miniImg: icoMoba, 
+    alt: "mobas"
+  },
+  {
+    id: "CARD_3",
+    img: futbolImg,
+    ico1: icoFutbol1,
+    ico2: icoFutbol2,
+    miniImg: futbolImgMini,
+    alt: "juegos de futbol"
+  },
+  {
+    id: "CARD_4",
+    img: cosplayImg,
+    ico1: icoCosplay1,
+    ico2: icoCosplay2,
+    miniImg: cosplayImgMini,
+    alt: "cosplay"
+  },
+  {
+    id: "CARD_5",
+    img: competitivosImg,
+    ico1: icoCompetitivos1,
+    ico2: icoCompetitivos2,
+    miniImg: competitivosImgMini,
+    alt: "competitivos"
+  },
+  {
+    id: "CARD_6",
+    img: divertidasImg,
+    ico1: icoDivertidas1,
+    ico2: icoDivertidas2,
+    miniImg: divertidasImgMini,
+    alt: "juegos divertidos"
+  },
+  {
+    id: "CARD_7",
+    img: visualesImg,
+    ico1: icoVisuales1,
+    ico2: icoVisuales2,
+    miniImg: visualesImgMini,
+    alt: "visuales"
+  },
+  {
+    id: "CARD_8",
+    img: tematicosImg,
+    ico1: icoTematicos1,
+    ico2: icoTematicos2,
+    miniImg: tematicosImgMini,
+    alt: "tematicos"
+  }
+]
+---
+
+<div class="text-center text-4xl lg:text-6xl text-[#ff0] py-10 lg:py-20">
+  <strong> {i18n.CATEGORIES.CARD.TITLE} </strong>
+</div>
+
+<section
+  class="text-white h-full pb-24 pt-8 grid place-content-center
+  animate-fade-up animate-once animate-duration-1000 animate-delay-100 animate-ease-linear"
+>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-x-14"
+  >
+    {CATEGORIES.map((cat) => {
+      // Acceso dinámico a las traducciones
+      const t = i18n.CATEGORIES.CARD[cat.id as keyof typeof i18n.CATEGORIES.CARD] as {
+        TITLE: string;
+        DESCRIPTION: string;
+        SUB_TITLE_1: string;
+        SUB_TITLE_2: string;
+      };
+      
+      return (
+        <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+          {/* Contenedor fantasma (Hover Effect) */}
+          <div class="relative mb-6 group">
+            <Image 
+              src={cat.img} 
+              alt={cat.alt} 
+              class="rounded-lg object-cover w-full h-[200px]" 
+            />
+
+            <div
+              class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer transition-all duration-300"
+            >
+              <Image src={fantasmaIco} alt="versus-ico" class="size-10" />
+            </div>
+          </div>
+
+          <h2 class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
+             {t.TITLE}
+          </h2>
+
+          <p class="text-[#add8e6] mb-4 text-base line-clamp-3">
+             {t.DESCRIPTION}
+          </p>
+
+          <div class="flex place-content-between mb-4">
+            <div class="flex gap-1.5 items-center">
+              <Image src={cat.ico1} alt="icon 1" class="size-5" />
+              <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
+                 {t.SUB_TITLE_1}
+              </p>
+            </div>
+
+            <div class="flex gap-1.5 items-center">
+              <Image src={cat.ico2} alt="icon 2" class="size-5" />
+              <p class="text-[#add8e6]">
+                 {t.SUB_TITLE_2}
+              </p>
+            </div>
+          </div>
+
+          <hr class="text-[#1e3a8a] mb-4" />
+
+          <div class="flex items-center gap-4">
+            <Image
+              src={cat.miniImg}
+              alt="mini icon"
+              class="rounded-full w-[33px] h-[33px] border border-white"
+            />
+
+            <p class="text-[#add8e6] flex gap-2">
+              {i18n.CATEGORIES.CARD.MORE_INFO_ALL}
+              <a
+                href="#"
+                class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+              >
+                <LogoButton />
+              </a>
+            </p>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</section>

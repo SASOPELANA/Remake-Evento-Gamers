@@ -1,0 +1,64 @@
+---
+// Cargar el CSS de PhotoSwipe
+import "photoswipe/style.css";
+
+// Importamos la traducción de los idiomas
+import { getI18n } from "../i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<div class="bg-gradient-to-r from-[#961aa7] via-black/50 via-50% to-[#961aa7]">
+  <strong
+    class="flex justify-center uppercase text-center text-5xl text-[#ff0] font-bold pt-5 md:pt-10"
+  >
+    {i18n.PIXEL_ZONE.TITLE}
+  </strong>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 max-w-full gap-4 lg:gap-10 mx-2 lg:mx-8 py-15 md:py-20"
+    id="gallery"
+  >
+    {
+      Array.from({ length: 12 }).map((_, i) => (
+        <a
+          class="group rounded-xl hover:scale-y-105 md:hover:scale-105 transition-all relative"
+          href={`/archivo-page/first-edition/gallery/img-${i + 1}.jpg`}
+          target="_blank"
+          data-pswp-width="1152"
+          data-pswp-height="768"
+        >
+          <img
+            class="blur-xl absolute inset-0 transition group-hover:contrast-150 opacity-70 -z-10"
+            loading="lazy"
+            src={`/archivo-page/first-edition/gallery/img-${i + 1}-zoom.webp`}
+            alt=""
+          />
+
+          <img
+            class="rounded-xl object-cover h-full w-full"
+            loading="lazy"
+            src={`/archivo-page/first-edition/gallery/img-${i + 1}-zoom.webp`}
+            alt=""
+          />
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+{/* Forma correcta de importar el script */}
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+
+  document.addEventListener("astro:page-load", () => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: "#gallery",
+      children: "a",
+      showHideAnimationType: "fade",
+      pswpModule: () => import("photoswipe"),
+    });
+    lightbox.init();
+  });
+</script>

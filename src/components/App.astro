@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Carrusel from "../components/Carrusel.astro";
+import ContadorTiempo from "../components/ContadorTiempo.astro";
+import SobreNosotros from "../components/SobreNosotros.astro";
+import CardJuegos from "../components/Card.astro";
+import Galeria from "../components/Gallery.astro";
+import Video from "../components/Video.astro";
+import Footer from "../components/Footer.astro";
+
+// Importamos la traducción de los idiomas
+import { getI18n } from "../i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<Layout
+  title={i18n.SEO_TITLE_1}
+  description={i18n.SEO_DESCRIPTION_1}
+  icons="/ino.webp"
+>
+  <div class="animate-fade animate-once animate-duration-1000">
+    <Carrusel />
+  </div>
+
+  <div
+    class="animate-fade-up animate-once animate-duration-1000 animate-delay-300"
+  >
+    <ContadorTiempo />
+  </div>
+
+  <div
+    class="animate-fade-up animate-once animate-duration-1000 animate-delay-300"
+  >
+    <SobreNosotros />
+  </div>
+
+  <div
+    class="animate-fade-up animate-once animate-duration-1000 animate-delay-300"
+  >
+    <CardJuegos />
+  </div>
+
+  <div
+    class="animate-fade-up animate-once animate-duration-1000 animate-delay-300"
+  >
+    <Galeria />
+  </div>
+
+  <div
+    class="animate-fade-up animate-once animate-duration-1000 animate-delay-300"
+  >
+    <Video />
+  </div>
+
+  <Footer />
+</Layout>

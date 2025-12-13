@@ -1,0 +1,95 @@
+---
+// Importamos la traducción de los idiomas
+import { getI18n } from "../i18n/";
+import { Image } from "astro:assets";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+
+import imgJuego1 from "../assets/images/arena/gg-strive.webp";
+import imgJuego2 from "../assets/images/arena/sf6.webp";
+import imgJuego3 from "../assets/images/arena/mortal-1.webp";
+import imgJuego4 from "../assets/images/arena/granblue-fantasy.webp";
+import imgJuego5 from "../assets/images/arena/teken-8.webp";
+import imgJuego6 from "../assets/images/arena/fatal-fury.webp";
+import imgJuego7 from "../assets/images/arena/under-night.webp";
+import imgJuego8 from "../assets/images/arena/marvel-capcom2.webp";
+import ArenaExtendida from "../components/Arena-Extendida.astro";
+
+const CARTAS = [
+  {
+    img: imgJuego1,
+    title: "GUILTY GEAR - STRIVE",
+  },
+  {
+    img: imgJuego2,
+    title: "STREET FIGHTER 6",
+  },
+  {
+    img: imgJuego3,
+    title: "MORTAL KOMBAT 1",
+  },
+  {
+    img: imgJuego4,
+    title: "GRANBLUE FANTASY VERSUS: RISING",
+  },
+  {
+    img: imgJuego5,
+    title: "TEKKEN 8",
+  },
+  {
+    img: imgJuego6,
+    title: "FATAL FURY: CITY OF THE WOLVES",
+  },
+  {
+    img: imgJuego7,
+    title: "UNDER NIGHT IN-BIRTH II SYS:CELES",
+  },
+  {
+    img: imgJuego8,
+    title: "MARVEL VS CAPCOM 2",
+  },
+];
+---
+
+<section
+  id="arena"
+  class="bg-white mb-10 mt-10 sm:mb-15 sm:mt-15 sm:ms-8 sm:me-8 me-2 ms-2 rounded-xl"
+>
+  <h2
+    class="text-center text-5xl font-bold relative sm:text-8xl sm:pt-32 lg:pt-40 pt-20"
+  >
+    <span class="text-transparent [-webkit-text-stroke:2px_#000] opacity-70"
+      >{i18n.ARENA.TITLE}</span
+    >
+  </h2>
+
+  <div
+    class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8 md:gap-x-6 justify-center max-w-screen-2xl mx-auto p-2 md:p-20 sm:p-10 sm:pt-32 pt-20"
+  >
+    {
+      CARTAS.map((cartas) => (
+        <div
+          class="max-w-[280px] h-[230px] md:max-w-[320px] md:h-[340px] bg-gray-50 border border-black rounded-lg shadow-sm 
+        overflow-hidden flex flex-col"
+        >
+          <div class="pt-2 px-2 md:pt-4 md:px-4">
+            <Image
+              class="h-38 w-full md:h-64 object-cover object-top rounded-2xl bg-gradient-to-r from-yellow-400 via-white via-50% to-yellow-500"
+              src={cartas.img}
+              alt={cartas.title}
+            />
+          </div>
+
+          <div class="p-4 flex-1 flex items-center justify-center">
+            <p class="text-base font-bold text-black text-center line-clamp-2">
+              <strong> {cartas.title} </strong>
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <ArenaExtendida />
+</section>

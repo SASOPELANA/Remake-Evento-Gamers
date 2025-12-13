@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import somosImg from "@/assets/images/somos-ica-cup.webp";
+import respaldoImg from "@/assets/images/ciber-respaldo.webp";
+const videoFondo = "/video-2.mp4";
+
+// Importamos la traducción de los idiomas
+import { getI18n } from "../i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+---
+
+<section
+  id="nosotros"
+  class="relative flex justify-center items-center min-h-[80vh] md:min-h-[100vh] py-20 overflow-hidden bg-gradient-to-r from-[#961aa7] via-black/50 via-50% to-[#961aa7]"
+>
+  <div class="absolute inset-0 z-0" id="video-container">
+    <video autoplay muted loop class="object-cover w-full h-full opacity-90">
+      <source src={videoFondo} type="video/mp4" />
+
+      <Image
+        src={respaldoImg}
+        alt="Fondo de respaldo"
+        class="w-full h-full object-cover opacity-90"
+      />
+    </video>
+  </div>
+
+  <div
+    class="relative z-10 flex flex-col items-center border border-[#ff0] mx-2 rounded-lg shadow-sm md:flex-row md:max-w-6xl bg-gray-800 hover:bg-gray-700"
+  >
+    <Image
+      class="object-cover w-full rounded-t-lg h-96 md:h-[520px] md:w-96 lg:w-[500px] md:rounded-none"
+      src={somosImg}
+      alt="INCA CUP 2025 - Torneo de videojuegos"
+    />
+    <div class="flex flex-col justify-between p-4 leading-normal">
+      <h5
+        class="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900"
+        set:html={i18n.ABOUT.TITLE}
+      />
+
+      <p
+        class="mb-3 font-normal text-white/50 md:text-lg text-pretty"
+        set:html={i18n.ABOUT.DESCRIPTION}
+      />
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Función auxiliar para detectar visibilidad con Promesas
+  const checkElementVisibility = (element, threshold = 0.5) => {
+    return new Promise((resolve) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            observer.disconnect(); // Detiene la observación
+            resolve(true);
+          }
+        },
+        { threshold },
+      );
+
+      observer.observe(element);
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const videoContainer = document.getElementById("video-container");
+
+    if (!videoContainer) return;
+
+    try {
+      // Espera hasta que el 50% del elemento sea visible
+      await checkElementVisibility(videoContainer, 0.5);
+
+      // Aplica animación cuando se cumple la promesa
+      videoContainer.classList.add(
+        "animate-pulse",
+        "animate-once",
+        "animate-ease-linear",
+      );
+    } catch (error) {
+      console.error("Error en la animación:", error);
+    }
+  });
+</script>
