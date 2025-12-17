@@ -56,39 +56,43 @@ const CARTAS = [
   id="arena"
   class="bg-white mb-10 mt-10 sm:mb-15 sm:mt-15 sm:ms-8 sm:me-8 me-2 ms-2 rounded-xl"
 >
-  <h2
-    class="text-center text-5xl font-bold relative sm:text-8xl sm:pt-32 lg:pt-40 pt-20"
-  >
-    <span class="text-transparent [-webkit-text-stroke:2px_#000] opacity-70"
-      >{i18n.ARENA.TITLE}</span
-    >
-  </h2>
-
   <div
-    class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8 md:gap-x-6 justify-center max-w-screen-2xl mx-auto p-2 md:p-20 sm:p-10 sm:pt-32 pt-20"
+    class="animate-flip-up animate-duration-1000 animate-delay-500 animate-ease-out"
   >
-    {
-      CARTAS.map((cartas) => (
-        <div
-          class="max-w-[280px] h-[230px] md:max-w-[320px] md:h-[340px] bg-gray-50 border border-black rounded-lg shadow-sm 
-        overflow-hidden flex flex-col"
-        >
-          <div class="pt-2 px-2 md:pt-4 md:px-4">
-            <Image
-              class="h-38 w-full md:h-64 object-cover object-top rounded-2xl bg-gradient-to-r from-yellow-400 via-white via-50% to-yellow-500"
-              src={cartas.img}
-              alt={cartas.title}
-            />
-          </div>
+    <h2
+      class="text-center text-5xl font-bold relative sm:text-8xl sm:pt-32 lg:pt-40 pt-20"
+    >
+      <span class="text-transparent [-webkit-text-stroke:2px_#000] opacity-70"
+        >{i18n.ARENA.TITLE}</span
+      >
+    </h2>
 
-          <div class="p-4 flex-1 flex items-center justify-center">
-            <p class="text-base font-bold text-black text-center line-clamp-2">
-              <strong> {cartas.title} </strong>
-            </p>
+    <div
+      class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8 md:gap-x-6 justify-center max-w-screen-2xl mx-auto p-2 md:p-20 sm:p-10 sm:pt-32 pt-20"
+    >
+      {
+        CARTAS.map((cartas) => (
+          <div
+            class="max-w-[280px] h-[230px] md:max-w-[320px] md:h-[340px] bg-gray-50 border border-black rounded-lg shadow-sm 
+        overflow-hidden flex flex-col"
+          >
+            <div class="pt-2 px-2 md:pt-4 md:px-4">
+              <Image
+                class="h-38 w-full md:h-64 object-cover object-top rounded-2xl bg-gradient-to-r from-yellow-400 via-white via-50% to-yellow-500"
+                src={cartas.img}
+                alt={cartas.title}
+              />
+            </div>
+
+            <div class="p-4 flex-1 flex items-center justify-center">
+              <p class="text-base font-bold text-black text-center line-clamp-2">
+                <strong> {cartas.title} </strong>
+              </p>
+            </div>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
 
   <ArenaExtendida />

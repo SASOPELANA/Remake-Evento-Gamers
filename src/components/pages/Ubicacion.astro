@@ -13,8 +13,7 @@ const i18n = getI18n({ currentLocale });
   class="py-20 px-3 md:px-5 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
 >
   <div
-    class="max-w-3xl mx-auto my-5 bg-[#2a0845] p-3 md:p-5 rounded-[10px] shadow-[0_0_15px_rgba(100,0,255,0.6)] border-2 border-[#6a0dad] text-white
-    animate-flip-up animate-duration-1000 animate-delay-500 animate-ease-out"
+    class="max-w-3xl mx-auto my-5 bg-[#2a0845] p-3 md:p-5 rounded-[10px] shadow-[0_0_15px_rgba(100,0,255,0.6)] border-2 border-[#6a0dad] text-white animate-flip-up animate-duration-1000 animate-delay-500 animate-ease-out"
   >
     <h1
       class="text-[#00ffff] text-center mb-5 font-['Press_Start_2P'] text-xl drop-shadow-[0_0_5px_#00ffff]"
@@ -65,7 +64,7 @@ const i18n = getI18n({ currentLocale });
 
     // Inicializar mapa
     map = L.map("map").setView([-23.136224, -64.323235], 15);
-    
+
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "© OpenStreetMap",
     }).addTo(map);

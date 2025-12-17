@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import LogoButton from "./LogoButton.astro";
 import { getI18n } from "@/i18n/";
 
@@ -66,15 +66,15 @@ const CATEGORIES = [
     ico1: icoMando,
     ico2: icoArcade,
     miniImg: ryuImg,
-    alt: "juegos de lucha"
+    alt: "juegos de lucha",
   },
   {
     id: "CARD_2",
     img: mobaImg,
     ico1: icoMoba1,
     ico2: icoMoba2,
-    miniImg: icoMoba, 
-    alt: "mobas"
+    miniImg: icoMoba,
+    alt: "mobas",
   },
   {
     id: "CARD_3",
@@ -82,7 +82,7 @@ const CATEGORIES = [
     ico1: icoFutbol1,
     ico2: icoFutbol2,
     miniImg: futbolImgMini,
-    alt: "juegos de futbol"
+    alt: "juegos de futbol",
   },
   {
     id: "CARD_4",
@@ -90,7 +90,7 @@ const CATEGORIES = [
     ico1: icoCosplay1,
     ico2: icoCosplay2,
     miniImg: cosplayImgMini,
-    alt: "cosplay"
+    alt: "cosplay",
   },
   {
     id: "CARD_5",
@@ -98,7 +98,7 @@ const CATEGORIES = [
     ico1: icoCompetitivos1,
     ico2: icoCompetitivos2,
     miniImg: competitivosImgMini,
-    alt: "competitivos"
+    alt: "competitivos",
   },
   {
     id: "CARD_6",
@@ -106,7 +106,7 @@ const CATEGORIES = [
     ico1: icoDivertidas1,
     ico2: icoDivertidas2,
     miniImg: divertidasImgMini,
-    alt: "juegos divertidos"
+    alt: "juegos divertidos",
   },
   {
     id: "CARD_7",
@@ -114,7 +114,7 @@ const CATEGORIES = [
     ico1: icoVisuales1,
     ico2: icoVisuales2,
     miniImg: visualesImgMini,
-    alt: "visuales"
+    alt: "visuales",
   },
   {
     id: "CARD_8",
@@ -122,9 +122,9 @@ const CATEGORIES = [
     ico1: icoTematicos1,
     ico2: icoTematicos2,
     miniImg: tematicosImgMini,
-    alt: "tematicos"
-  }
-]
+    alt: "tematicos",
+  },
+];
 ---
 
 <div class="text-center text-4xl lg:text-6xl text-[#ff0] py-10 lg:py-20">
@@ -138,77 +138,77 @@ const CATEGORIES = [
   <div
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-x-14"
   >
-    {CATEGORIES.map((cat) => {
-      // Acceso dinámico a las traducciones
-      const t = i18n.CATEGORIES.CARD[cat.id as keyof typeof i18n.CATEGORIES.CARD] as {
-        TITLE: string;
-        DESCRIPTION: string;
-        SUB_TITLE_1: string;
-        SUB_TITLE_2: string;
-      };
-      
-      return (
-        <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
-          {/* Contenedor fantasma (Hover Effect) */}
-          <div class="relative mb-6 group">
-            <Image 
-              src={cat.img} 
-              alt={cat.alt} 
-              class="rounded-lg object-cover w-full h-[200px]" 
-            />
+    {
+      CATEGORIES.map((cat) => {
+        // Acceso dinámico a las traducciones
+        const t = i18n.CATEGORIES.CARD[
+          cat.id as keyof typeof i18n.CATEGORIES.CARD
+        ] as {
+          TITLE: string;
+          DESCRIPTION: string;
+          SUB_TITLE_1: string;
+          SUB_TITLE_2: string;
+        };
 
-            <div
-              class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer transition-all duration-300"
-            >
-              <Image src={fantasmaIco} alt="versus-ico" class="size-10" />
-            </div>
-          </div>
+        return (
+          <div class="w-[327px] bg-blue-950 rounded-[15px] p-6">
+            {/* Contenedor fantasma (Hover Effect) */}
+            <div class="relative mb-6 group">
+              <Image
+                src={cat.img}
+                alt={cat.alt}
+                class="rounded-lg object-cover w-full h-[200px]"
+              />
 
-          <h2 class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
-             {t.TITLE}
-          </h2>
-
-          <p class="text-[#add8e6] mb-4 text-base line-clamp-3">
-             {t.DESCRIPTION}
-          </p>
-
-          <div class="flex place-content-between mb-4">
-            <div class="flex gap-1.5 items-center">
-              <Image src={cat.ico1} alt="icon 1" class="size-5" />
-              <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
-                 {t.SUB_TITLE_1}
-              </p>
+              <div class="bg-[#00ffff]/50 absolute top-0 w-full h-full place-content-center rounded-lg hidden group-hover:grid cursor-pointer transition-all duration-300">
+                <Image src={fantasmaIco} alt="versus-ico" class="size-10" />
+              </div>
             </div>
 
-            <div class="flex gap-1.5 items-center">
-              <Image src={cat.ico2} alt="icon 2" class="size-5" />
-              <p class="text-[#add8e6]">
-                 {t.SUB_TITLE_2}
-              </p>
-            </div>
-          </div>
+            <h2 class="font-semibold text-[1.22em] mb-3 hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
+              {t.TITLE}
+            </h2>
 
-          <hr class="text-[#1e3a8a] mb-4" />
-
-          <div class="flex items-center gap-4">
-            <Image
-              src={cat.miniImg}
-              alt="mini icon"
-              class="rounded-full w-[33px] h-[33px] border border-white"
-            />
-
-            <p class="text-[#add8e6] flex gap-2">
-              {i18n.CATEGORIES.CARD.MORE_INFO_ALL}
-              <a
-                href="#"
-                class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
-              >
-                <LogoButton />
-              </a>
+            <p class="text-[#add8e6] mb-4 text-base line-clamp-3">
+              {t.DESCRIPTION}
             </p>
+
+            <div class="flex place-content-between mb-4">
+              <div class="flex gap-1.5 items-center">
+                <Image src={cat.ico1} alt="icon 1" class="size-5" />
+                <p class="text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]">
+                  {t.SUB_TITLE_1}
+                </p>
+              </div>
+
+              <div class="flex gap-1.5 items-center">
+                <Image src={cat.ico2} alt="icon 2" class="size-5" />
+                <p class="text-[#add8e6]">{t.SUB_TITLE_2}</p>
+              </div>
+            </div>
+
+            <hr class="text-[#1e3a8a] mb-4" />
+
+            <div class="flex items-center gap-4">
+              <Image
+                src={cat.miniImg}
+                alt="mini icon"
+                class="rounded-full w-[33px] h-[33px] border border-white"
+              />
+
+              <p class="text-[#add8e6] flex gap-2">
+                {i18n.CATEGORIES.CARD.MORE_INFO_ALL}
+                <a
+                  href="#"
+                  class="text-white cursor-pointer hover:text-[#00ffff] drop-shadow-[0_0_5px_#00ffff]"
+                >
+                  <LogoButton />
+                </a>
+              </p>
+            </div>
           </div>
-        </div>
-      );
-    })}
+        );
+      })
+    }
   </div>
 </section>

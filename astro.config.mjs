@@ -8,6 +8,9 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["photoswipe", "photoswipe/lightbox"],
+    },
   },
   integrations: [icon()],
   i18n: {

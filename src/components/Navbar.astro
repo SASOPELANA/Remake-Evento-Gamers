@@ -1,0 +1,147 @@
+---
+// Importamos la traducción de los idiomas
+import { getI18n } from "@/i18n/";
+
+// Components
+import FlagSpain from "./flags/FlagSpain.astro";
+import FlagUSA from "./flags/FlagUSA.astro";
+import FlagUSACircle from "./flags/FlagUSACircle.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
+const currentLang = Astro.currentLocale || "";
+
+interface Props {
+  isHomePage: boolean;
+  navIds: {
+    navId?: string;
+    menuId?: string;
+  };
+}
+
+const { isHomePage, navIds } = Astro.props;
+---
+
+<div class="hidden w-full md:block md:w-auto" id={navIds.menuId}>
+  <ul
+    class="font-semibold flex flex-col p-4 text-gray-900 md:p-0 mt-4 border border-gray-100 rounded-lg bg-black/20 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent md:items-center"
+  >
+    {
+      isHomePage ? (
+        <>
+          <li>
+            <a
+              href={`/${currentLang}/nosotros#nosotros-nav`}
+              class="block py-2 px-3 text-white rounded-sm hover:md:bg-transparent hover:bg-[#961aa7]/80 hover:text-[#ff0] md:p-0"
+            >
+              <strong>{i18n.HEADER.LOGO_2}</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              href={`/${currentLang}/arena#arena-nav`}
+              class="block py-2 px-3 text-white rounded-sm hover:bg-[#961aa7]/80 md:hover:bg-transparent md:border-0 hover:text-[#ff0] md:p-0"
+            >
+              <strong>{i18n.HEADER.LOGO_3}</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              href={`/${currentLang}/categorias#categorias-nav`}
+              class="block py-2 px-3 text-white rounded-sm hover:bg-[#961aa7]/80 md:hover:bg-transparent md:border-0 hover:text-[#ff0] md:p-0"
+            >
+              <strong>{i18n.HEADER.LOGO_4}</strong>
+            </a>
+          </li>
+          <li>
+            <a
+              href={`/${currentLang}/contacto#contacto-nav`}
+              class="block py-2 px-3 text-white rounded-sm hover:bg-[#961aa7]/80 md:hover:bg-transparent md:border-0 md:p-0 hover:text-[#ff0]"
+            >
+              <strong>{i18n.HEADER.LOGO_5}</strong>
+            </a>
+          </li>
+        </>
+      ) : (
+        <li>
+          <a
+            href={`/${currentLang}/`}
+            class="block py-2 px-3 bg-transparent md:p-0"
+            aria-current="page"
+          >
+            <strong class="md:text-xl text-[#ff0] hover:underline hover:bg-black/30 font-bold text-shadow-rosa hover:rounded-lg">
+              {i18n.MAP.HEADER_HOME}
+            </strong>
+          </a>
+        </li>
+      )
+    }
+
+    {/* Auth Buttons */}
+    <li>
+      <a
+        href="#"
+        class="block py-2 px-3 md:px-4 text-white rounded-sm md:rounded-full hover:bg-[#961aa7]/80 md:hover:bg-white hover:text-[#ff0] md:hover:text-[#961aa7] transition-all transform md:hover:scale-105 md:border-2 md:border-white"
+      >
+        <strong>{i18n.HEADER.AUTH.LOGIN}</strong>
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+        class="block py-2 px-3 md:px-4 text-white rounded-sm md:rounded-full hover:bg-[#961aa7]/80 md:hover:bg-white hover:text-[#ff0] md:hover:text-[#961aa7] transition-all transform md:hover:scale-105 md:border-2 md:border-white"
+      >
+        <strong>{i18n.HEADER.AUTH.REGISTER}</strong>
+      </a>
+    </li>
+
+    {/* Language Selector */}
+    <li>
+      <button
+        data-dropdown-toggle="language-dropdown-menu"
+        class="flex gap-2 py-2 px-3 text-black rounded-sm hover:bg-[#961aa7]/80 md:hover:bg-transparent md:border-0 md:hover:text-black md:p-0"
+      >
+        <strong
+          class="text-[#ff0] hover:text-white text-shadow-md text-shadow-red-400 hover:underline hover:decoration-4 hover:cursor-pointer"
+        >
+          {i18n.HEADER.IDIOMA.TITLE}
+        </strong>
+        <FlagUSACircle />
+      </button>
+
+      <div
+        class="z-50 hidden my-4 text-base list-none divide-y divide-gray-100 rounded-lg shadow-sm bg-white/80 w-auto max-w-xs"
+        id="language-dropdown-menu"
+      >
+        <ul class="py-2 font-medium" role="none">
+          <li>
+            <li>
+              <a
+                href={`/en${Astro.url.pathname.replace(/^\/(en|es)/, "")}`}
+                class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white"
+                role="menuitem"
+              >
+                <div class="inline-flex items-center">
+                  <FlagUSA />
+                  <strong> {i18n.HEADER.IDIOMA.ENGLISH} </strong>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href={`/es${Astro.url.pathname.replace(/^\/(en|es)/, "")}`}
+                class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white hover:text-bold"
+                role="menuitem"
+              >
+                <div class="inline-flex items-center">
+                  <FlagSpain />
+                  <strong> {i18n.HEADER.IDIOMA.SPANISH} </strong>
+                </div>
+              </a>
+            </li>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

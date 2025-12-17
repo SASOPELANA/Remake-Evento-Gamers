@@ -60,7 +60,9 @@ const bgImage = await getImage({ src: bgImageSrc, format: "webp" });
         placeholder={i18n.FORM.FORM_CONTACT.EMAIL_PLACEHOLDER}
         required
       />
-      <p class="text-red-500/80 text-sm hidden peer-invalid:block">
+      <p
+        class="text-red-500 hidden peer-[&:not(:placeholder-shown):invalid]:block mt-1 text-sm"
+      >
         {i18n.FORM.FORM_CONTACT.EMAIL_VALIDATION}
       </p>
     </div>
@@ -313,7 +315,7 @@ const bgImage = await getImage({ src: bgImageSrc, format: "webp" });
         vantaEffect.destroy();
         vantaEffect = null;
       }
-      
+
       // Inicializamos Vanta
       vantaEffect = window.VANTA.BIRDS({
         el: "#vanta-bg",
@@ -345,7 +347,8 @@ const bgImage = await getImage({ src: bgImageSrc, format: "webp" });
 
     // Si no está cargado, creamos el script
     const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js";
+    script.src =
+      "https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js";
     script.onload = setVanta;
     document.body.appendChild(script);
   };

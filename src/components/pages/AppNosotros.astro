@@ -1,8 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-
-// Componentes
-import Mapa from "./Ubicacion.astro";
+import SobreNosotros from "@/components/SobreNosotros.astro";
 
 // Importamos la traducción de los idiomas
 import { getI18n } from "@/i18n/";
@@ -12,9 +10,9 @@ const i18n = getI18n({ currentLocale });
 ---
 
 <Layout
-  title={i18n.MAP.SEO_TITLE}
-  description={i18n.MAP.SEO_DESCRIPTION}
+  title={i18n.ABOUT.TITLE}
+  description={i18n.ABOUT.DESCRIPTION}
   icons="/ino.webp"
 >
-  <Mapa />
+  <SobreNosotros />
 </Layout>

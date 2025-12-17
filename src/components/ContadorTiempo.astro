@@ -6,103 +6,105 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<div
-  class="max-w-4xl mx-auto p-6 pb-40 bg-gradient-to-r from-[#961aa7] via-[#D30691] via-50% to-[#961aa7]"
->
-  <strong
-    class="flex justify-center text-3xl md:text-5xl font-bold mb-10 text-center text-white drop-shadow-lg uppercase mt-10 md:mt-20 pb-15"
-  >
-    {i18n.TIMER.TITLE}
-  </strong>
-
+<div class="bg-[#961aa7]">
   <div
-    class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-10 text-center"
-    id="countdown"
+    class="max-w-4xl mx-auto p-6 pb-40 bg-gradient-to-r from-[#961aa7] via-[#D30691] via-50% to-[#961aa7]"
   >
-    <!-- Days -->
-    <div
-      class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:scale-105 transition-transform border-4 border-emerald-400 shadow-lg shadow-white/30"
+    <strong
+      class="flex justify-center text-3xl md:text-5xl font-bold mb-10 text-center text-white drop-shadow-lg uppercase mt-10 md:mt-20 pb-15"
     >
-      <div class="text-5xl font-bold text-emerald-400" data-days>0</div>
-      <div class="mt-2 text-sm uppercase tracking-wider text-gray-300">
-        {i18n.TIMER.DAYS.PLURAL}
+      {i18n.TIMER.TITLE}
+    </strong>
+
+    <div
+      class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-10 text-center"
+      id="countdown"
+    >
+      <!-- Days -->
+      <div
+        class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:scale-105 transition-transform border-4 border-emerald-400 shadow-lg shadow-white/30"
+      >
+        <div class="text-5xl font-bold text-emerald-400" data-days>0</div>
+        <div class="mt-2 text-sm uppercase tracking-wider text-gray-300">
+          {i18n.TIMER.DAYS.PLURAL}
+        </div>
+      </div>
+
+      <!-- Hours -->
+      <div
+        class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:scale-105 transition-transform border-4 border-sky-400 shadow-lg shadow-cyan-500/50"
+      >
+        <div class="text-5xl font-bold text-sky-400" data-hours>0</div>
+        <div class="mt-2 text-sm uppercase tracking-wider text-gray-300">
+          {i18n.TIMER.HOURS.PLURAL}
+        </div>
+      </div>
+
+      <!-- Minutes -->
+      <div
+        class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:scale-105 transition-transform border-4 border-purple-400 shadow-lg shadow-purple-500/50"
+      >
+        <div class="text-5xl font-bold text-purple-400" data-minutes>0</div>
+        <div class="mt-2 text-sm uppercase tracking-wider text-gray-300">
+          {i18n.TIMER.MINUTES.PLURAL}
+        </div>
+      </div>
+
+      <!-- Seconds -->
+      <div
+        class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:scale-105 transition-transform border-4 border-rose-400 shadow-lg shadow-rose-500/50"
+      >
+        <div class="text-5xl font-bold text-rose-400" data-seconds>0</div>
+        <div class="mt-2 text-sm uppercase tracking-wider text-gray-300">
+          {i18n.TIMER.SECONDS.PLURAL}
+        </div>
       </div>
     </div>
 
-    <!-- Hours -->
-    <div
-      class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:scale-105 transition-transform border-4 border-sky-400 shadow-lg shadow-cyan-500/50"
-    >
-      <div class="text-5xl font-bold text-sky-400" data-hours>0</div>
-      <div class="mt-2 text-sm uppercase tracking-wider text-gray-300">
-        {i18n.TIMER.HOURS.PLURAL}
-      </div>
-    </div>
+    <script is:inline define:vars={{ alertTitle: i18n.TIMER.ALERT }}>
+      // Configuración inicial
+      const updateInterval = 1000;
+      const targetTime = new Date("2026-01-24T00:00:00").getTime();
+      const numberFormatter = new Intl.NumberFormat(undefined, {
+        minimumIntegerDigits: 2,
+      });
 
-    <!-- Minutes -->
-    <div
-      class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:scale-105 transition-transform border-4 border-purple-400 shadow-lg shadow-purple-500/50"
-    >
-      <div class="text-5xl font-bold text-purple-400" data-minutes>0</div>
-      <div class="mt-2 text-sm uppercase tracking-wider text-gray-300">
-        {i18n.TIMER.MINUTES.PLURAL}
-      </div>
-    </div>
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetTime - now;
 
-    <!-- Seconds -->
-    <div
-      class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:scale-105 transition-transform border-4 border-rose-400 shadow-lg shadow-rose-500/50"
-    >
-      <div class="text-5xl font-bold text-rose-400" data-seconds>0</div>
-      <div class="mt-2 text-sm uppercase tracking-wider text-gray-300">
-        {i18n.TIMER.SECONDS.PLURAL}
-      </div>
-    </div>
-  </div>
-
-  <script is:inline define:vars={{ alertTitle: i18n.TIMER.ALERT }}>
-    // Configuración inicial
-    const updateInterval = 1000;
-    const targetTime = new Date("2026-01-24T00:00:00").getTime();
-    const numberFormatter = new Intl.NumberFormat(undefined, {
-      minimumIntegerDigits: 2,
-    });
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetTime - now;
-
-      if (distance < 0) {
-        document.getElementById("countdown").innerHTML = `
+        if (distance < 0) {
+          document.getElementById("countdown").innerHTML = `
           <div class="col-span-4 text-center py-8">
             <h3 class="text-2xl font-bold text-emerald-400">${alertTitle}</h3>
           </div>
         `;
-        return;
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Actualizar DOM
+        document.querySelector("[data-days]").textContent =
+          numberFormatter.format(days);
+        document.querySelector("[data-hours]").textContent =
+          numberFormatter.format(hours);
+        document.querySelector("[data-minutes]").textContent =
+          numberFormatter.format(minutes);
+        document.querySelector("[data-seconds]").textContent =
+          numberFormatter.format(seconds);
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-      );
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Actualizar DOM
-      document.querySelector("[data-days]").textContent =
-        numberFormatter.format(days);
-      document.querySelector("[data-hours]").textContent =
-        numberFormatter.format(hours);
-      document.querySelector("[data-minutes]").textContent =
-        numberFormatter.format(minutes);
-      document.querySelector("[data-seconds]").textContent =
-        numberFormatter.format(seconds);
-    }
-
-    // Iniciar contador
-    updateCountdown();
-    setInterval(updateCountdown, updateInterval);
-  </script>
+      // Iniciar contador
+      updateCountdown();
+      setInterval(updateCountdown, updateInterval);
+    </script>
+  </div>
 </div>
 
 <style lang="postcss">

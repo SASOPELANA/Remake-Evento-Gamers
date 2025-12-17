@@ -1,8 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-
-// Componentes
-import Mapa from "./Ubicacion.astro";
+import CardJuegos from "@/components/Card.astro";
 
 // Importamos la traducción de los idiomas
 import { getI18n } from "@/i18n/";
@@ -12,9 +10,9 @@ const i18n = getI18n({ currentLocale });
 ---
 
 <Layout
-  title={i18n.MAP.SEO_TITLE}
-  description={i18n.MAP.SEO_DESCRIPTION}
+  title={i18n.ARENA.TITLE}
+  description={i18n.ARENA.TITLE}
   icons="/ino.webp"
 >
-  <Mapa />
+  <CardJuegos />
 </Layout>

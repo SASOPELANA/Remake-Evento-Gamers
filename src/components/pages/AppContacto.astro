@@ -1,9 +1,7 @@
 ---
-import LayoutContacto from "@/layouts/ContactoLayout.astro";
+import Layout from "@/layouts/Layout.astro";
 
 import Formulario from "./Formulario.astro";
-
-import Footer from "@/components/Footer.astro";
 
 // Importamos la traducción de los idiomas
 import { getI18n } from "@/i18n/";
@@ -12,12 +10,10 @@ const { currentLocale } = Astro;
 const i18n = getI18n({ currentLocale });
 ---
 
-<LayoutContacto
+<Layout
   title={i18n.FORM.SEO_TITLE}
   description={i18n.FORM.SEO_DESCRIPTION}
   icons="/ino.webp"
 >
   <Formulario />
-
-  <Footer />
-</LayoutContacto>
+</Layout>
