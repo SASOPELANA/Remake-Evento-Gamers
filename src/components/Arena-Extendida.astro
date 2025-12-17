@@ -131,7 +131,7 @@ const CARTAS = [
     title2: i18n.EXTENDED_ARENA.BOTTON.TITLE_2,
   }}
 >
-  document.addEventListener("astro:page-load", () => {
+  const handleArenaPageLoad = () => {
     const toggleButton = document.getElementById("toggleButton");
     const content = document.getElementById("content");
     const buttonText = document.getElementById("buttonText");
@@ -139,7 +139,8 @@ const CARTAS = [
     const upArrow = document.getElementById("upArrow");
 
     if (toggleButton && content && buttonText) {
-      toggleButton.addEventListener("click", () => {
+      // Remover listener previo para evitar duplicados si se re-ejecuta
+      const newClickHandler = () => {
         const isHidden = content.classList.toggle("hidden");
 
         buttonText.textContent = isHidden ? title1 : title2;
@@ -150,14 +151,27 @@ const CARTAS = [
           upArrow.classList.toggle("opacity-100", !isHidden);
           upArrow.classList.toggle("opacity-0", isHidden);
         }
-      });
+      };
+
+      // Limpiar click listener anterior clonando el botón (hack rápido y efectivo para eliminar todos los listeners)
+      // O mejor, simplemente asignamos onclick que sobrescribe el anterior.
+      toggleButton.onclick = newClickHandler;
 
       // Forzar estado inicial del botón
       buttonText.textContent = content.classList.contains("hidden")
         ? title1
         : title2;
-    } else {
-      console.error("No se encontraron todos los elementos necesarios.");
     }
-  });
+  };
+
+  // Limpiar listener anterior de astro:page-load si existe
+  if (window.arenaPageLoadHandler) {
+    document.removeEventListener(
+      "astro:page-load",
+      window.arenaPageLoadHandler,
+    );
+  }
+
+  window.arenaPageLoadHandler = handleArenaPageLoad;
+  document.addEventListener("astro:page-load", window.arenaPageLoadHandler);
 </script>

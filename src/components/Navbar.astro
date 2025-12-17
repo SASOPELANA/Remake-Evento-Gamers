@@ -115,30 +115,28 @@ const { isHomePage, navIds } = Astro.props;
       >
         <ul class="py-2 font-medium" role="none">
           <li>
-            <li>
-              <a
-                href={`/en${Astro.url.pathname.replace(/^\/(en|es)/, "")}`}
-                class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white"
-                role="menuitem"
-              >
-                <div class="inline-flex items-center">
-                  <FlagUSA />
-                  <strong> {i18n.HEADER.IDIOMA.ENGLISH} </strong>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a
-                href={`/es${Astro.url.pathname.replace(/^\/(en|es)/, "")}`}
-                class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white hover:text-bold"
-                role="menuitem"
-              >
-                <div class="inline-flex items-center">
-                  <FlagSpain />
-                  <strong> {i18n.HEADER.IDIOMA.SPANISH} </strong>
-                </div>
-              </a>
-            </li>
+            <a
+              href={`/en${Astro.url.pathname.replace(/^\/(en|es)/, "")}`}
+              class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white"
+              role="menuitem"
+            >
+              <div class="inline-flex items-center">
+                <FlagUSA />
+                <strong> {i18n.HEADER.IDIOMA.ENGLISH} </strong>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href={`/es${Astro.url.pathname.replace(/^\/(en|es)/, "")}`}
+              class="block px-4 py-2 text-gray-900 hover:bg-[#961aa7]/65 hover:text-white hover:text-bold"
+              role="menuitem"
+            >
+              <div class="inline-flex items-center">
+                <FlagSpain />
+                <strong> {i18n.HEADER.IDIOMA.SPANISH} </strong>
+              </div>
+            </a>
           </li>
         </ul>
       </div>

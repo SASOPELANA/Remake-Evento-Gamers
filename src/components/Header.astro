@@ -72,12 +72,10 @@ const {
       aria-expanded="false"
     >
       <span class="sr-only">Open main menu</span>
-      <Icon name="flowbite:bars-outline" class="w-5 h-5 text-gray-500" />
+      <Icon name="flowbite:bars-outline" class="w-5 h-5 text-gray-200 border border-gray-200 rounded-lg" />
     </button>
 
-    <div class="hidden w-full md:block md:w-auto" id={navIds.menuId}>
-      <Navbar isHomePage={isHomePage} navIds={navIds} />
-    </div>
+    <Navbar isHomePage={isHomePage} navIds={navIds} />
   </div>
 </nav>
 

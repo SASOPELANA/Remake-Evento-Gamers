@@ -62,47 +62,64 @@ const i18n = getI18n({ currentLocale });
     </div>
 
     <script is:inline define:vars={{ alertTitle: i18n.TIMER.ALERT }}>
-      // Configuración inicial
-      const updateInterval = 1000;
-      const targetTime = new Date("2026-01-24T00:00:00").getTime();
-      const numberFormatter = new Intl.NumberFormat(undefined, {
-        minimumIntegerDigits: 2,
-      });
+      document.addEventListener("astro:page-load", () => {
+        const countdownContainer = document.getElementById("countdown");
+        if (!countdownContainer) return;
 
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetTime - now;
+        const daysEl = countdownContainer.querySelector("[data-days]");
+        const hoursEl = countdownContainer.querySelector("[data-hours]");
+        const minutesEl = countdownContainer.querySelector("[data-minutes]");
+        const secondsEl = countdownContainer.querySelector("[data-seconds]");
 
-        if (distance < 0) {
-          document.getElementById("countdown").innerHTML = `
-          <div class="col-span-4 text-center py-8">
-            <h3 class="text-2xl font-bold text-emerald-400">${alertTitle}</h3>
-          </div>
-        `;
-          return;
+        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+        const updateInterval = 1000;
+        const targetTime = new Date("2026-01-24T00:00:00").getTime();
+        const numberFormatter = new Intl.NumberFormat(undefined, {
+          minimumIntegerDigits: 2,
+        });
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = targetTime - now;
+
+          if (distance < 0) {
+            countdownContainer.innerHTML = `
+              <div class="col-span-4 text-center py-8">
+                <h3 class="text-2xl font-bold text-emerald-400">${alertTitle}</h3>
+              </div>
+            `;
+            if (intervalId) clearInterval(intervalId);
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60),
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          daysEl.textContent = numberFormatter.format(days);
+          hoursEl.textContent = numberFormatter.format(hours);
+          minutesEl.textContent = numberFormatter.format(minutes);
+          secondsEl.textContent = numberFormatter.format(seconds);
         }
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        updateCountdown();
+        const intervalId = setInterval(updateCountdown, updateInterval);
+
+        // Limpiar intervalo al cambiar de página
+        document.addEventListener(
+          "astro:before-swap",
+          () => {
+            clearInterval(intervalId);
+          },
+          { once: true },
         );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Actualizar DOM
-        document.querySelector("[data-days]").textContent =
-          numberFormatter.format(days);
-        document.querySelector("[data-hours]").textContent =
-          numberFormatter.format(hours);
-        document.querySelector("[data-minutes]").textContent =
-          numberFormatter.format(minutes);
-        document.querySelector("[data-seconds]").textContent =
-          numberFormatter.format(seconds);
-      }
-
-      // Iniciar contador
-      updateCountdown();
-      setInterval(updateCountdown, updateInterval);
+      });
     </script>
   </div>
 </div>
